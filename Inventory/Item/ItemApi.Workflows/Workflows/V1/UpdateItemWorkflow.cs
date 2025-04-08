@@ -1,0 +1,63 @@
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
+using ItemApi.Workflows.Validators.V1;
+using ItemApi.Data.DataOperations.V1;
+using ItemApi.Models.Classes.V1;
+using ItemApi.Models.Converters.V1;
+using ItemApi.Models.DTOs.V1;
+
+namespace ItemApi.Workflows.Workflows.V1
+{
+    public interface IUpdateItemWorkflowV1
+    {
+        Task UpdateItem(Item item);
+    }
+
+    public class UpdateItemWorkflowV1 : IUpdateItemWorkflowV1
+    {
+        private readonly ILogger _logger;
+        private readonly IConfiguration _configuration;
+        private readonly IUpdateItemOperationsV1 _updateItemOperations;
+        private readonly IVerifyOperationsV1 _verifyOperations;
+        private readonly IItemWorkflowValidatorV1 _workflowValidator;
+
+        public UpdateItemWorkflowV1(ILoggerFactory loggerFactory, IConfiguration configuration)
+        {
+            _logger = loggerFactory.CreateLogger<UpdateItemWorkflowV1>();
+            _configuration = configuration;
+            _updateItemOperations = new UpdateItemOperationsV1(loggerFactory, configuration);
+            _verifyOperations = new VerifyOperationsV1(loggerFactory, configuration);
+            _workflowValidator = new ItemWorkflowValidatorV1(loggerFactory, configuration, _verifyOperations);
+        }
+
+        public async Task UpdateItem(Item item)
+        {
+            _logger.LogDebug("UpdateItem request received.");
+
+            try
+            {
+                // Validate
+                var failures = await _workflowValidator.ValidateUpdateItem(item);
+                if (!string.IsNullOrEmpty(failures)) throw new ArgumentException(failures);
+
+                // Process
+                ItemDto itemDto = ItemConverter.ConvertItemToItemDto(item);
+                await _updateItemOperations.UpdateItem(itemDto);
+
+                // Respond
+                _logger.LogInformation("UpdateItem success response.");
+                return;
+            }
+            catch (ArgumentException ae)
+            {
+                _logger.LogError($"[200300037] UpdateItem ArgumentException: {ae}.");
+                throw;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"[200300038] UpdateItem Exception: {e}.");
+                throw;
+            }
+        }
+    }
+}
