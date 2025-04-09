@@ -9,6 +9,10 @@
       {
         "Path": "User\\UserApi\\UserApi.csproj",
         "Action": "Start"
+      },
+      {
+        "Path": "Collection\\CollectionApi\\CollectionApi.csproj",
+        "Action": "Start"
       }
     ]
   }

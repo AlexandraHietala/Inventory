@@ -1,0 +1,7 @@
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Collection\CollectionApi\obj\Debug\net8.0\CollectionApi.csproj.AssemblyReference.cache
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Collection\CollectionApi\obj\Debug\net8.0\CollectionApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Collection\CollectionApi\obj\Debug\net8.0\CollectionApi.AssemblyInfoInputs.cache
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Collection\CollectionApi\obj\Debug\net8.0\CollectionApi.AssemblyInfo.cs
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Collection\CollectionApi\obj\Debug\net8.0\CollectionApi.csproj.CoreCompileInputs.cache
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Collection\CollectionApi\obj\Debug\net8.0\CollectionApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Collection\CollectionApi\obj\Debug\net8.0\CollectionApi.sourcelink.json

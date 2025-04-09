@@ -1,0 +1,14 @@
+using System.ComponentModel.DataAnnotations;
+
+namespace CollectionApi.Models.System
+{
+    public class ValidationFailure
+    {
+        [Required]
+        public required int Code { get; set; }
+
+        [Required]
+        public required string Message { get; set; }
+
+    }
+}

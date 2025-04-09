@@ -12,17 +12,3 @@ C:\Users\alexa\source\repos\StarryEden\Inventory\User\UserApi.Models\obj\Debug\n
 C:\Users\alexa\source\repos\StarryEden\Inventory\User\UserApi.Models\obj\Debug\net8.0\UserApi.Models.pdb
 C:\Users\alexa\source\repos\StarryEden\Inventory\User\UserApi.Models\obj\Debug\net8.0\UserApi.Models.genruntimeconfig.cache
 C:\Users\alexa\source\repos\StarryEden\Inventory\User\UserApi.Models\obj\Debug\net8.0\ref\UserApi.Models.dll
-C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\User\UserApi.Models\bin\Debug\net8.0\UserApi.Models.exe
-C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\User\UserApi.Models\bin\Debug\net8.0\UserApi.Models.deps.json
-C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\User\UserApi.Models\bin\Debug\net8.0\UserApi.Models.runtimeconfig.json
-C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\User\UserApi.Models\bin\Debug\net8.0\UserApi.Models.dll
-C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\User\UserApi.Models\bin\Debug\net8.0\UserApi.Models.pdb
-C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\User\UserApi.Models\obj\Debug\net8.0\UserApi.Models.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\User\UserApi.Models\obj\Debug\net8.0\UserApi.Models.AssemblyInfoInputs.cache
-C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\User\UserApi.Models\obj\Debug\net8.0\UserApi.Models.AssemblyInfo.cs
-C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\User\UserApi.Models\obj\Debug\net8.0\UserApi.Models.csproj.CoreCompileInputs.cache
-C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\User\UserApi.Models\obj\Debug\net8.0\UserApi.Models.dll
-C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\User\UserApi.Models\obj\Debug\net8.0\refint\UserApi.Models.dll
-C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\User\UserApi.Models\obj\Debug\net8.0\UserApi.Models.pdb
-C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\User\UserApi.Models\obj\Debug\net8.0\UserApi.Models.genruntimeconfig.cache
-C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\User\UserApi.Models\obj\Debug\net8.0\ref\UserApi.Models.dll

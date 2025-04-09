@@ -1,0 +1,5 @@
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Collection\CollectionApi.Models\obj\Debug\net8.0\CollectionApi.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Collection\CollectionApi.Models\obj\Debug\net8.0\CollectionApi.Models.AssemblyInfoInputs.cache
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Collection\CollectionApi.Models\obj\Debug\net8.0\CollectionApi.Models.AssemblyInfo.cs
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Collection\CollectionApi.Models\obj\Debug\net8.0\CollectionApi.Models.csproj.CoreCompileInputs.cache
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Collection\CollectionApi.Models\obj\Debug\net8.0\CollectionApi.Models.sourcelink.json

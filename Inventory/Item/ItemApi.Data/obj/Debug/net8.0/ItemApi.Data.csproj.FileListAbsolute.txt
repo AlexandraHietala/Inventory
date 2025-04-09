@@ -136,6 +136,7 @@ C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Item\ItemApi.Da
 C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Item\ItemApi.Data\obj\Debug\net8.0\ItemApi.Data.AssemblyInfoInputs.cache
 C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Item\ItemApi.Data\obj\Debug\net8.0\ItemApi.Data.AssemblyInfo.cs
 C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Item\ItemApi.Data\obj\Debug\net8.0\ItemApi.Data.csproj.CoreCompileInputs.cache
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Item\ItemApi.Data\obj\Debug\net8.0\ItemApi.Data.sourcelink.json
 C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Item\ItemApi.Data\obj\Debug\net8.0\ItemApi..355730A8.Up2Date
 C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Item\ItemApi.Data\obj\Debug\net8.0\ItemApi.Data.dll
 C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Item\ItemApi.Data\obj\Debug\net8.0\refint\ItemApi.Data.dll

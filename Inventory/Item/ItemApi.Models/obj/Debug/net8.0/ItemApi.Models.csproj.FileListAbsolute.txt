@@ -21,6 +21,7 @@ C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Item\ItemApi.Mo
 C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Item\ItemApi.Models\obj\Debug\net8.0\ItemApi.Models.AssemblyInfoInputs.cache
 C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Item\ItemApi.Models\obj\Debug\net8.0\ItemApi.Models.AssemblyInfo.cs
 C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Item\ItemApi.Models\obj\Debug\net8.0\ItemApi.Models.csproj.CoreCompileInputs.cache
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Item\ItemApi.Models\obj\Debug\net8.0\ItemApi.Models.sourcelink.json
 C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Item\ItemApi.Models\obj\Debug\net8.0\ItemApi.Models.dll
 C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Item\ItemApi.Models\obj\Debug\net8.0\refint\ItemApi.Models.dll
 C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Item\ItemApi.Models\obj\Debug\net8.0\ItemApi.Models.pdb
