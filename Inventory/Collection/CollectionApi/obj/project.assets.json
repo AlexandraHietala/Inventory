@@ -818,7 +818,7 @@
           "lib/netcoreapp2.1/_._": {}
         }
       },
-      "CollectionApi.Data/1.0.0": {
+      "CollectionApi.DataOLD/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
@@ -829,10 +829,10 @@
           "Microsoft.Extensions.Logging.Abstractions": "9.0.0"
         },
         "compile": {
-          "bin/placeholder/CollectionApi.Data.dll": {}
+          "bin/placeholder/CollectionApi.DataOLD.dll": {}
         },
         "runtime": {
-          "bin/placeholder/CollectionApi.Data.dll": {}
+          "bin/placeholder/CollectionApi.DataOLD.dll": {}
         }
       },
       "CollectionApi.Models/1.0.0": {
@@ -845,49 +845,30 @@
           "bin/placeholder/CollectionApi.Models.dll": {}
         }
       },
-      "CollectionApi.Workflows/1.0.0": {
+      "CollectionApi.ModelsOLD/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/CollectionApi.ModelsOLD.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CollectionApi.ModelsOLD.dll": {}
+        }
+      },
+      "CollectionApi.WorkflowsOLD/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
-          "CollectionApi.Data": "1.0.0",
-          "CollectionApi.Models": "1.0.0",
-          "ItemApi.Data": "1.0.0",
-          "ItemApi.Models": "1.0.0",
+          "CollectionApi.DataOLD": "1.0.0",
+          "CollectionApi.ModelsOLD": "1.0.0",
           "Microsoft.Extensions.Configuration.Abstractions": "9.0.3",
           "Microsoft.Extensions.Logging.Abstractions": "9.0.0"
         },
         "compile": {
-          "bin/placeholder/CollectionApi.Workflows.dll": {}
+          "bin/placeholder/CollectionApi.WorkflowsOLD.dll": {}
         },
         "runtime": {
-          "bin/placeholder/CollectionApi.Workflows.dll": {}
-        }
-      },
-      "ItemApi.Data/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "Dapper": "2.1.66",
-          "ItemApi.Models": "1.0.0",
-          "Microsoft.Data.SqlClient": "6.0.1",
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.3",
-          "Microsoft.Extensions.Logging.Abstractions": "9.0.0"
-        },
-        "compile": {
-          "bin/placeholder/ItemApi.Data.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/ItemApi.Data.dll": {}
-        }
-      },
-      "ItemApi.Models/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "compile": {
-          "bin/placeholder/ItemApi.Models.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/ItemApi.Models.dll": {}
+          "bin/placeholder/CollectionApi.WorkflowsOLD.dll": {}
         }
       }
     }
@@ -2345,38 +2326,33 @@
         "version.txt"
       ]
     },
-    "CollectionApi.Data/1.0.0": {
+    "CollectionApi.DataOLD/1.0.0": {
       "type": "project",
-      "path": "../CollectionApi.Data/CollectionApi.Data.csproj",
-      "msbuildProject": "../CollectionApi.Data/CollectionApi.Data.csproj"
+      "path": "../CollectionApi.Data/CollectionApi.DataOLD.csproj",
+      "msbuildProject": "../CollectionApi.Data/CollectionApi.DataOLD.csproj"
     },
     "CollectionApi.Models/1.0.0": {
       "type": "project",
       "path": "../CollectionApi.Models/CollectionApi.Models.csproj",
       "msbuildProject": "../CollectionApi.Models/CollectionApi.Models.csproj"
     },
-    "CollectionApi.Workflows/1.0.0": {
+    "CollectionApi.ModelsOLD/1.0.0": {
       "type": "project",
-      "path": "../CollectionApi.Workflows/CollectionApi.Workflows.csproj",
-      "msbuildProject": "../CollectionApi.Workflows/CollectionApi.Workflows.csproj"
+      "path": "../CollectionApi.Models/CollectionApi.ModelsOLD.csproj",
+      "msbuildProject": "../CollectionApi.Models/CollectionApi.ModelsOLD.csproj"
     },
-    "ItemApi.Data/1.0.0": {
+    "CollectionApi.WorkflowsOLD/1.0.0": {
       "type": "project",
-      "path": "../../Item/ItemApi.Data/ItemApi.Data.csproj",
-      "msbuildProject": "../../Item/ItemApi.Data/ItemApi.Data.csproj"
-    },
-    "ItemApi.Models/1.0.0": {
-      "type": "project",
-      "path": "../../Item/ItemApi.Models/ItemApi.Models.csproj",
-      "msbuildProject": "../../Item/ItemApi.Models/ItemApi.Models.csproj"
+      "path": "../CollectionApi.Workflows/CollectionApi.WorkflowsOLD.csproj",
+      "msbuildProject": "../CollectionApi.Workflows/CollectionApi.WorkflowsOLD.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "Asp.Versioning.Http >= 8.1.0",
       "Asp.Versioning.Mvc.ApiExplorer >= 8.1.0",
-      "CollectionApi.Models >= 1.0.0",
-      "CollectionApi.Workflows >= 1.0.0",
+      "CollectionApi.ModelsOLD >= 1.0.0",
+      "CollectionApi.WorkflowsOLD >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.6.2"
     ]
   },
@@ -2413,11 +2389,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Models\\CollectionApi.Models.csproj": {
-              "projectPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Models\\CollectionApi.Models.csproj"
+            "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Models\\CollectionApi.ModelsOLD.csproj": {
+              "projectPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Models\\CollectionApi.ModelsOLD.csproj"
             },
-            "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Workflows\\CollectionApi.Workflows.csproj": {
-              "projectPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Workflows\\CollectionApi.Workflows.csproj"
+            "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Workflows\\CollectionApi.WorkflowsOLD.csproj": {
+              "projectPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Workflows\\CollectionApi.WorkflowsOLD.csproj"
             }
           }
         }

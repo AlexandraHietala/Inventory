@@ -1,6 +1,5 @@
 using CollectionApi.Models.Classes.V1;
 using CollectionApi.Models.System;
-using ItemApi.Models.Classes.V1;
 using Microsoft.SqlServer.Server;
 using System.Drawing;
 

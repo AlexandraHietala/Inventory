@@ -35,11 +35,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Collection", "Collection", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollectionApi", "Collection\CollectionApi\CollectionApi.csproj", "{67C9101C-C749-4F87-A031-FDA4BCAAEAFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollectionApi.Data", "Collection\CollectionApi.Data\CollectionApi.Data.csproj", "{E6A6EBA1-57EA-4D9D-AACB-76E73CA76DE4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollectionApi.DataOLD", "Collection\CollectionApi.Data\CollectionApi.DataOLD.csproj", "{E6A6EBA1-57EA-4D9D-AACB-76E73CA76DE4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollectionApi.Models", "Collection\CollectionApi.Models\CollectionApi.Models.csproj", "{061A1F2C-D6BB-40E0-82D7-CAF2EF817611}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollectionApi.ModelsOLD", "Collection\CollectionApi.Models\CollectionApi.ModelsOLD.csproj", "{061A1F2C-D6BB-40E0-82D7-CAF2EF817611}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollectionApi.Workflows", "Collection\CollectionApi.Workflows\CollectionApi.Workflows.csproj", "{7B564666-17BD-4C41-9E7B-9FC41149DEC2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollectionApi.WorkflowsOLD", "Collection\CollectionApi.Workflows\CollectionApi.WorkflowsOLD.csproj", "{7B564666-17BD-4C41-9E7B-9FC41149DEC2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollectionApi.Tests", "Collection\CollectionApi.Tests\CollectionApi.Tests.csproj", "{8C46C220-E01A-409E-9A27-FD9B25E7A1BC}"
 EndProject

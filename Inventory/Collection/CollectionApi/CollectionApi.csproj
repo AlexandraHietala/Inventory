@@ -13,8 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CollectionApi.Models\CollectionApi.Models.csproj" />
-    <ProjectReference Include="..\CollectionApi.Workflows\CollectionApi.Workflows.csproj" />
+    <ProjectReference Include="..\CollectionApi.Models\CollectionApi.ModelsOLD.csproj" />
+    <ProjectReference Include="..\CollectionApi.Workflows\CollectionApi.WorkflowsOLD.csproj" />
   </ItemGroup>
 
 </Project>

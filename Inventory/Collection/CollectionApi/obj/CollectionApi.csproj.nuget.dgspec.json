@@ -4,12 +4,12 @@
     "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi\\CollectionApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Data\\CollectionApi.Data.csproj": {
+    "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Data\\CollectionApi.DataOLD.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Data\\CollectionApi.Data.csproj",
-        "projectName": "CollectionApi.Data",
-        "projectPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Data\\CollectionApi.Data.csproj",
+        "projectUniqueName": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Data\\CollectionApi.DataOLD.csproj",
+        "projectName": "CollectionApi.DataOLD",
+        "projectPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Data\\CollectionApi.DataOLD.csproj",
         "packagesPath": "C:\\Users\\alexa\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Data\\obj\\",
         "projectStyle": "PackageReference",
@@ -158,12 +158,78 @@
         }
       }
     },
-    "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Workflows\\CollectionApi.Workflows.csproj": {
+    "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Models\\CollectionApi.ModelsOLD.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Workflows\\CollectionApi.Workflows.csproj",
-        "projectName": "CollectionApi.Workflows",
-        "projectPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Workflows\\CollectionApi.Workflows.csproj",
+        "projectUniqueName": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Models\\CollectionApi.ModelsOLD.csproj",
+        "projectName": "CollectionApi.ModelsOLD",
+        "projectPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Models\\CollectionApi.ModelsOLD.csproj",
+        "packagesPath": "C:\\Users\\alexa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\alexa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Workflows\\CollectionApi.WorkflowsOLD.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Workflows\\CollectionApi.WorkflowsOLD.csproj",
+        "projectName": "CollectionApi.WorkflowsOLD",
+        "projectPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Workflows\\CollectionApi.WorkflowsOLD.csproj",
         "packagesPath": "C:\\Users\\alexa\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Workflows\\obj\\",
         "projectStyle": "PackageReference",
@@ -187,17 +253,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Data\\CollectionApi.Data.csproj": {
-                "projectPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Data\\CollectionApi.Data.csproj"
+              "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Data\\CollectionApi.DataOLD.csproj": {
+                "projectPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Data\\CollectionApi.DataOLD.csproj"
               },
-              "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Models\\CollectionApi.Models.csproj": {
-                "projectPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Models\\CollectionApi.Models.csproj"
-              },
-              "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Data\\ItemApi.Data.csproj": {
-                "projectPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Data\\ItemApi.Data.csproj"
-              },
-              "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Models\\ItemApi.Models.csproj": {
-                "projectPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Models\\ItemApi.Models.csproj"
+              "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Models\\CollectionApi.ModelsOLD.csproj": {
+                "projectPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Models\\CollectionApi.ModelsOLD.csproj"
               }
             }
           }
@@ -276,11 +336,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Models\\CollectionApi.Models.csproj": {
-                "projectPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Models\\CollectionApi.Models.csproj"
+              "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Models\\CollectionApi.ModelsOLD.csproj": {
+                "projectPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Models\\CollectionApi.ModelsOLD.csproj"
               },
-              "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Workflows\\CollectionApi.Workflows.csproj": {
-                "projectPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Workflows\\CollectionApi.Workflows.csproj"
+              "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Workflows\\CollectionApi.WorkflowsOLD.csproj": {
+                "projectPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Workflows\\CollectionApi.WorkflowsOLD.csproj"
               }
             }
           }
@@ -329,160 +389,6 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Data\\ItemApi.Data.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Data\\ItemApi.Data.csproj",
-        "projectName": "ItemApi.Data",
-        "projectPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Data\\ItemApi.Data.csproj",
-        "packagesPath": "C:\\Users\\alexa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Data\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\alexa\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net8.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
-            "projectReferences": {
-              "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Models\\ItemApi.Models.csproj": {
-                "projectPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Models\\ItemApi.Models.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
-      },
-      "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
-          "dependencies": {
-            "Dapper": {
-              "target": "Package",
-              "version": "[2.1.66, )"
-            },
-            "Microsoft.Data.SqlClient": {
-              "target": "Package",
-              "version": "[6.0.1, )"
-            },
-            "Microsoft.Extensions.Configuration.Abstractions": {
-              "target": "Package",
-              "version": "[9.0.3, )"
-            },
-            "Microsoft.Extensions.Logging.Abstractions": {
-              "target": "Package",
-              "version": "[9.0.0, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Models\\ItemApi.Models.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Models\\ItemApi.Models.csproj",
-        "projectName": "ItemApi.Models",
-        "projectPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Models\\ItemApi.Models.csproj",
-        "packagesPath": "C:\\Users\\alexa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Models\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\alexa\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net8.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
-      },
-      "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
