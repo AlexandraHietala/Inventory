@@ -1,0 +1,106 @@
+[
+  {
+    "ContainingType": "CollectionApi.Controllers.V1.AddCollectionControllerV1",
+    "Method": "AddCollectionV1",
+    "RelativePath": "api/v1/collection/addcollection",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "collectionName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "lastmodifiedby",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CollectionApi.Controllers.V1.GetCollectionControllerV1",
+    "Method": "GetCollectionV1",
+    "RelativePath": "api/v1/collection/getcollection",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CollectionApi.Controllers.V1.GetCollectionControllerV1",
+    "Method": "GetCollectionsV1",
+    "RelativePath": "api/v1/collection/getcollections",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CollectionApi.Controllers.V1.RemoveCollectionControllerV1",
+    "Method": "RemoveCollectionV1",
+    "RelativePath": "api/v1/collection/removecollection",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "lastmodifiedby",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CollectionApi.Controllers.V1.UpdateCollectionControllerV1",
+    "Method": "UpdateCollectionV1",
+    "RelativePath": "api/v1/collection/updatecollection",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "collectionName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "lastmodifiedby",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

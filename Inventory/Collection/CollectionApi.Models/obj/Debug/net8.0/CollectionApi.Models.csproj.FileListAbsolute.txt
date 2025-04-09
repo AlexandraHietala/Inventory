@@ -1,5 +1,15 @@
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Collection\CollectionApi.Models\bin\Debug\net8.0\CollectionApi.Models.exe
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Collection\CollectionApi.Models\bin\Debug\net8.0\CollectionApi.Models.deps.json
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Collection\CollectionApi.Models\bin\Debug\net8.0\CollectionApi.Models.runtimeconfig.json
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Collection\CollectionApi.Models\bin\Debug\net8.0\CollectionApi.Models.dll
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Collection\CollectionApi.Models\bin\Debug\net8.0\CollectionApi.Models.pdb
 C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Collection\CollectionApi.Models\obj\Debug\net8.0\CollectionApi.Models.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Collection\CollectionApi.Models\obj\Debug\net8.0\CollectionApi.Models.AssemblyInfoInputs.cache
 C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Collection\CollectionApi.Models\obj\Debug\net8.0\CollectionApi.Models.AssemblyInfo.cs
 C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Collection\CollectionApi.Models\obj\Debug\net8.0\CollectionApi.Models.csproj.CoreCompileInputs.cache
 C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Collection\CollectionApi.Models\obj\Debug\net8.0\CollectionApi.Models.sourcelink.json
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Collection\CollectionApi.Models\obj\Debug\net8.0\CollectionApi.Models.dll
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Collection\CollectionApi.Models\obj\Debug\net8.0\refint\CollectionApi.Models.dll
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Collection\CollectionApi.Models\obj\Debug\net8.0\CollectionApi.Models.pdb
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Collection\CollectionApi.Models\obj\Debug\net8.0\CollectionApi.Models.genruntimeconfig.cache
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Collection\CollectionApi.Models\obj\Debug\net8.0\ref\CollectionApi.Models.dll

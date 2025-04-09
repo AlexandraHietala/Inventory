@@ -1735,9 +1735,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Data\\CollectionApi.DataOLD.csproj",
-      "projectName": "CollectionApi.DataOLD",
-      "projectPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Data\\CollectionApi.DataOLD.csproj",
+      "projectUniqueName": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Data\\CollectionApi.Data.csproj",
+      "projectName": "CollectionApi.Data",
+      "projectPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Data\\CollectionApi.Data.csproj",
       "packagesPath": "C:\\Users\\alexa\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Data\\obj\\",
       "projectStyle": "PackageReference",

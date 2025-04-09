@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ItemApi.Mocks")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e4bb0d3a20a72e3eed245f868336787380ce4cd2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+97b9da28c8ee9c38c7003d3669fe7dff2bead9e8")]
 [assembly: System.Reflection.AssemblyProductAttribute("ItemApi.Mocks")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ItemApi.Mocks")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

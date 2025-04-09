@@ -13,6 +13,18 @@
       {
         "Path": "Collection\\CollectionApi\\CollectionApi.csproj",
         "Action": "Start"
+      },
+      {
+        "Path": "Collection\\CollectionApi.Models\\CollectionApi.Models.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Collection\\CollectionApi.Data\\CollectionApi.Data.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Collection\\CollectionApi.Workflows\\CollectionApi.Workflows.csproj",
+        "Action": "Start"
       }
     ]
   }

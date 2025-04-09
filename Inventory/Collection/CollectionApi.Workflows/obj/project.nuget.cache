@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1Ls5bV9VoIU=",
+  "dgSpecHash": "3D1EQXmXumo=",
   "success": true,
-  "projectFilePath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Workflows\\CollectionApi.WorkflowsOLD.csproj",
+  "projectFilePath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Workflows\\CollectionApi.Workflows.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alexa\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\alexa\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
