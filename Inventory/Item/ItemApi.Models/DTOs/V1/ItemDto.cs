@@ -7,7 +7,10 @@ namespace ItemApi.Models.DTOs.V1
     {
         [Required]
         public required int ID { get; set; }
-        
+
+        [Required]
+        public required int COLLECTION_ID { get; set; }
+
         [Required]
         public required string STATUS { get; set; } 
 

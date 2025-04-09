@@ -69,7 +69,7 @@ namespace ItemApi.Controllers.V1
         [MapToApiVersion("1.0")]
         [HttpGet]
         [Route("getbrands")]
-        public async Task<IActionResult> GetBrandsV1()
+        public async Task<IActionResult> GetBrandsV1() // TODO: Add search string param
         {
             _logger.LogDebug("GetBrands request received.");
 

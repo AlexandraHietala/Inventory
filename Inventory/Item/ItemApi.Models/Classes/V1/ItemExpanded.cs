@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using CollectionApi.Models.Classes.V1;
 using ItemApi.Models.System;
 
 namespace ItemApi.Models.Classes.V1
@@ -7,6 +8,9 @@ namespace ItemApi.Models.Classes.V1
     {
         [Required]
         public required int Id { get; set; }
+
+        [Required]
+        public required Collection CollectionId { get; set; }
 
         [Required]
         public required string Status { get; set; }

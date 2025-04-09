@@ -12,6 +12,8 @@ namespace ItemApi.Workflows.Workflows.V1
     {
         Task<Item> GetItem(int id);
         Task<List<Item>> GetItems();
+
+        Task<List<Item>> GetItemsPerCollection(int collectionId);
     }
 
     public class GetItemWorkflowV1 : IGetItemWorkflowV1
@@ -86,6 +88,36 @@ namespace ItemApi.Workflows.Workflows.V1
             catch (Exception e)
             {
                 _logger.LogError($"[200300020] GetItems Exception: {e}.");
+                throw;
+            }
+        }
+
+        public async Task<List<Item>> GetItemsPerCollection(int collectionId)
+        {
+            _logger.LogDebug("GetItemsPerCollection request received.");
+
+            try
+            {
+                // Validate
+                //var failures = await _workflowValidator.ValidateCollectionId(collectionId); // TODO: Add validator for collectionId, but I think this needs to go in the Collections projects
+                //if (!string.IsNullOrEmpty(failures)) throw new ArgumentException(failures);
+
+                // Process
+                List<ItemDto> itemDtos = await _getItemOperations.GetItemsPerCollection(collectionId);
+                List<Item> items = ItemConverter.ConvertListItemDtoToListItem(itemDtos);
+
+                // Respond
+                _logger.LogInformation("GetItemsPerCollection success response.");
+                return items;
+            }
+            catch (ArgumentException ae)
+            {
+                _logger.LogError($"[200300041] GetItemsPerCollection ArgumentException: {ae}.");
+                throw;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"[200300042] GetItemsPerCollection Exception: {e}.");
                 throw;
             }
         }

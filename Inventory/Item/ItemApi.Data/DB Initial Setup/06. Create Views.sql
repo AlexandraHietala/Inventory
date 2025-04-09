@@ -46,6 +46,15 @@ GO
 
 -----------------------------------------------------------
 
+CREATE OR ALTER VIEW [app].[vwCollections] AS
+	
+SELECT *
+FROM [StarryEdenCollection].[app].[vwCollections]
+
+GO
+
+-----------------------------------------------------------
+
 CREATE OR ALTER VIEW [app].[vwItems_Expanded]
 AS
 
@@ -70,7 +79,17 @@ AS
 			WHERE item.BRAND_ID = bra.ID
 			ORDER BY bra.ID
 			FOR XML PATH ('')
-		), 1, 10000) [BRAND]
+		), 1, 10000) [BRAND],
+
+		-- Collection in format of   1 CollectionA 2 CollectionB 3 CollectionC
+		SUBSTRING (
+		(
+			SELECT ' ' + CAST(col.ID as varchar) + ' ' + col.COLLECTION_NAME AS [text()]
+			FROM [app].[vwCollections] col
+			WHERE item.COLLECTION_ID = col.ID
+			ORDER BY col.ID
+			FOR XML PATH ('')
+		), 1, 10000) [COLLECTION]
 
 	FROM [app].[vwItems] item;
 

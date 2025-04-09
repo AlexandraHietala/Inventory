@@ -664,9 +664,22 @@
           "lib/netcoreapp2.1/_._": {}
         }
       },
+      "CollectionApi.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/CollectionApi.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CollectionApi.Models.dll": {}
+        }
+      },
       "ItemApi.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "CollectionApi.Models": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/ItemApi.Models.dll": {}
         },
@@ -1712,6 +1725,11 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "CollectionApi.Models/1.0.0": {
+      "type": "project",
+      "path": "../../Collection/CollectionApi.Models/CollectionApi.Models.csproj",
+      "msbuildProject": "../../Collection/CollectionApi.Models/CollectionApi.Models.csproj"
     },
     "ItemApi.Models/1.0.0": {
       "type": "project",

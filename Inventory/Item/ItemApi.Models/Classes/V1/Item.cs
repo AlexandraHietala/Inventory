@@ -9,6 +9,9 @@ namespace ItemApi.Models.Classes.V1
         public required int Id { get; set; }
 
         [Required]
+        public required int CollectionId { get; set; }
+
+        [Required]
         public required string Status { get; set; }
 
         [Required]

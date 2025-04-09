@@ -31,7 +31,7 @@ namespace ItemApi.Controllers.V1
         [MapToApiVersion("1.0")]
         [HttpPut]
         [Route("updateitem")]
-        public async Task<IActionResult> UpdateItemV1(int id, string status, string type, int? brandId, int? seriesId, string? name, string? description, string format, string size, int? year, string? photo, string lastmodifiedby)
+        public async Task<IActionResult> UpdateItemV1(int id, int collectionId, string status, string type, int? brandId, int? seriesId, string? name, string? description, string format, string size, int? year, string? photo, string lastmodifiedby)
         {
             _logger.LogDebug("UpdateItem request received.");
 
@@ -41,6 +41,7 @@ namespace ItemApi.Controllers.V1
                 Item item = new Item()
                 {
                     Id = id,
+                    CollectionId = collectionId,
                     Status = status,
                     Type = type,
                     BrandId = brandId,

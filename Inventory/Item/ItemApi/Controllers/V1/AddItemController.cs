@@ -31,7 +31,7 @@ namespace ItemApi.Controllers.V1
         [MapToApiVersion("1.0")]
         [HttpPost]
         [Route("additem")]
-        public async Task<IActionResult> AddItemV1(string status, string type, int? brandId, int? seriesId, string? name, string? description, string format, string size, int? year, string? photo, string lastmodifiedby)
+        public async Task<IActionResult> AddItemV1(int collectionId, string status, string type, int? brandId, int? seriesId, string? name, string? description, string format, string size, int? year, string? photo, string lastmodifiedby)
         {
             _logger.LogDebug("AddItem request received.");
             // TODO: add storage location info, sku, barcode
@@ -42,6 +42,7 @@ namespace ItemApi.Controllers.V1
                 Item item = new Item()
                 {
                     Id = 0,
+                    CollectionId = collectionId,
                     Status = status,
                     Type = type,
                     BrandId = brandId,

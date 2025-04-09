@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Collection\CollectionApi.Models\CollectionApi.Models.csproj" />
+  </ItemGroup>
+
 </Project>

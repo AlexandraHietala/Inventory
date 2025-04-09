@@ -20,6 +20,9 @@ namespace ItemApi.Validators.V1
             if (item == null)
                 failureList.Add(new ValidationFailure() { Code = 200200033, Message = "Item object is invalid." });
 
+            if (item != null && item.CollectionId != null && item.CollectionId == 0)
+                failureList.Add(new ValidationFailure() { Code = 200200085, Message = "Collection Id is invalid." });
+
             if (item != null && string.IsNullOrEmpty(item.Status))
                 failureList.Add(new ValidationFailure() { Code = 200200034, Message = "Status is required." });
 
@@ -97,6 +100,9 @@ namespace ItemApi.Validators.V1
 
             if (item != null && !int.TryParse(item.Id.ToString(), out _))
                 failureList.Add(new ValidationFailure() { Code = 200200056, Message = "Item Id is invalid." });
+
+            if (item != null && item.CollectionId != null && item.CollectionId == 0)
+                failureList.Add(new ValidationFailure() { Code = 200200086, Message = "Collection Id is invalid." });
 
             if (item != null && string.IsNullOrEmpty(item.Status))
                 failureList.Add(new ValidationFailure() { Code = 200200057, Message = "Status is required." });

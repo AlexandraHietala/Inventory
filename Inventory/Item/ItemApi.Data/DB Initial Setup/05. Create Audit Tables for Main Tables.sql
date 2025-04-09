@@ -14,6 +14,7 @@ CREATE TABLE [hist].[Audit_Items](
 	[EFFECTIVE_DATE] [datetime] NOT NULL DEFAULT GetDate(),
 	[INEFFECTIVE_DATE] [datetime] NULL,
 	[ID] [int] NOT NULL,
+	[COLLECTION_ID] [int] NULL,
 	[STATUS] [varchar](10) NOT NULL,
 	[TYPE] [varchar](15) NOT NULL,
 	[BRAND_ID] [int] NULL,

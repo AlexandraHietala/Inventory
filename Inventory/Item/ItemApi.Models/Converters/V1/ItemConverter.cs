@@ -10,6 +10,7 @@ namespace ItemApi.Models.Converters.V1
             return new Item()
             {
                 Id = source.ID,
+                CollectionId = source.COLLECTION_ID,
                 Status = source.STATUS,
                 Type = source.TYPE,
                 BrandId = (source.BRAND_ID != null ? source.BRAND_ID : null),
@@ -32,6 +33,7 @@ namespace ItemApi.Models.Converters.V1
             return new ItemDto()
             {
                 ID = source.Id,
+                COLLECTION_ID = source.CollectionId,
                 STATUS = source.Status,
                 TYPE = source.Type,
                 BRAND_ID = (source.SeriesId != null ? source.SeriesId : null),
@@ -58,6 +60,7 @@ namespace ItemApi.Models.Converters.V1
                 Item item = new Item()
                 {
                     Id = itemDto.ID,
+                    CollectionId = itemDto.COLLECTION_ID,
                     Status = itemDto.STATUS,
                     Type = itemDto.TYPE,
                     BrandId = (itemDto.BRAND_ID != null ? itemDto.BRAND_ID : null),
@@ -89,6 +92,7 @@ namespace ItemApi.Models.Converters.V1
                 ItemDto itemDto = new ItemDto()
                 {
                     ID = item.Id,
+                    COLLECTION_ID = item.CollectionId,
                     STATUS = item.Status,
                     TYPE = item.Type,
                     BRAND_ID = (item.SeriesId != null ? item.SeriesId : null),

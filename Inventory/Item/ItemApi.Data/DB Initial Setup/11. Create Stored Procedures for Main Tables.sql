@@ -206,6 +206,7 @@ GO
 -----------------------------------------------------------
 
 CREATE OR ALTER PROCEDURE [app].[spAddItem]
+	@collection_id int,
 	@status varchar(10),
 	@type varchar(15),
 	@brand_id int,
@@ -221,8 +222,8 @@ AS
 
 BEGIN TRY
 
-	INSERT INTO [app].[Items] ([STATUS],[TYPE],[BRAND_ID],[SERIES_ID],[NAME],[DESCRIPTION],[FORMAT],[SIZE],[YEAR],[PHOTO],[CREATED_BY],[LAST_MODIFIED_BY])
-	VALUES (@status,@type,@brand_id,@series_id,@name,@description,@format,@size,@year,@photo,@lastmodifiedby,@lastmodifiedby)
+	INSERT INTO [app].[Items] ([COLLECTION_ID],[STATUS],[TYPE],[BRAND_ID],[SERIES_ID],[NAME],[DESCRIPTION],[FORMAT],[SIZE],[YEAR],[PHOTO],[CREATED_BY],[LAST_MODIFIED_BY])
+	VALUES (@collection_id,@status,@type,@brand_id,@series_id,@name,@description,@format,@size,@year,@photo,@lastmodifiedby,@lastmodifiedby)
 
 	SELECT SCOPE_IDENTITY();
 
@@ -332,6 +333,7 @@ GO
 
 CREATE OR ALTER PROCEDURE [app].[spUpdateItem]
 	@id int,
+	@collection_id int,
 	@status varchar(10),
 	@type varchar(15),
 	@brand_id int,
@@ -349,6 +351,7 @@ BEGIN TRY
 
 	UPDATE [app].[Items]
 	SET	
+		COLLECTION_ID = @collection_id,
 		STATUS = @status,
 		TYPE = @type,
 		BRAND_ID = @brand_id,
@@ -395,6 +398,7 @@ CREATE OR ALTER PROCEDURE [app].[spSearchItems]
 	@orderby varchar(50),
 	@order varchar(4),
 	@id int,
+	@collection_id int,
 	@status varchar(10),
 	@type varchar(15),
 	@brand_id int,
@@ -422,6 +426,7 @@ BEGIN TRY
 	SET @sqlbasecommand2 = 'SELECT COUNT(*) as Results FROM [app].[vwItems_Search]';
 	SET @sqlwhereclause = 
 	(CASE WHEN @id IS NOT NULL THEN ' AND [ID] = ' + CAST(@id as varchar(50)) ELSE '' END)
+	+ (CASE WHEN @collection_id IS NOT NULL THEN ' AND [COLLECTION_ID] = ' + CAST(@collection_id as varchar(50)) ELSE '' END)
 	+ (CASE WHEN @status IS NOT NULL THEN ' AND [STATUS] = ''' + LTRIM(RTRIM(@status)) + '''' ELSE '' END)
 	+ (CASE WHEN @type IS NOT NULL THEN ' AND [TYPE] = ''' + LTRIM(RTRIM(@type)) + '''' ELSE '' END)
 	+ (CASE WHEN @brand_id IS NOT NULL THEN ' AND [BRAND_ID] = ' + CAST(@brand_id as varchar(50)) ELSE '' END)
@@ -434,7 +439,7 @@ BEGIN TRY
 	+ (CASE WHEN @freeform IS NOT NULL THEN ' AND [FULLDATA] LIKE ''%' + LTRIM(RTRIM(@freeform)) + '%''' ELSE '' END)
 	+ (CASE WHEN @modified_within IS NOT NULL THEN ' AND DATEDIFF(day,LAST_MODIFIED_DATE,GETDATE()) BETWEEN 0 AND ' + @modified_within ELSE '' END);
 
-	SET @rowclause = ') SELECT [ID],[STATUS],[TYPE],[BRAND_ID],[SERIES_ID],[NAME],[FORMAT],[SIZE],[YEAR],[CREATED_BY],[CREATED_DATE],[LAST_MODIFIED_BY],[LAST_MODIFIED_DATE] FROM CTE WHERE RowNumber >= ' + CAST(@startingindex as varchar(50)) + ' AND RowNumber <= ' + CAST(@endingindex as varchar(50));
+	SET @rowclause = ') SELECT [ID],[COLLECTION_ID],[STATUS],[TYPE],[BRAND_ID],[SERIES_ID],[NAME],[FORMAT],[SIZE],[YEAR],[CREATED_BY],[CREATED_DATE],[LAST_MODIFIED_BY],[LAST_MODIFIED_DATE] FROM CTE WHERE RowNumber >= ' + CAST(@startingindex as varchar(50)) + ' AND RowNumber <= ' + CAST(@endingindex as varchar(50));
 
 	SET @stringstart = LEFT(@sqlwhereclause, 5);
 	IF (@stringstart = ' AND ') SET @sqlwhereclause = RIGHT(@sqlwhereclause, LEN(@sqlwhereclause)-5);
@@ -479,6 +484,40 @@ BEGIN TRY
 
 	IF (@search IS NOT NULL AND LEN(LTRIM(RTRIM(@search))) > 0) SELECT * FROM [app].[vwItems_Search] WHERE FULLDATA LIKE '%' + LTRIM(RTRIM(@search)) + '%'
 	ELSE SELECT * FROM [app].[vwItems]
+
+END TRY
+
+BEGIN CATCH
+
+	DECLARE @ErrorMessage nvarchar(4000);
+	DECLARE @ErrorSeverity int;
+	DECLARE @ErrorState int;
+
+	SELECT @ErrorMessage = ERROR_MESSAGE(),
+		   @ErrorSeverity = ERROR_SEVERITY(),
+		   @ErrorState = ERROR_STATE();
+
+	SELECT @ErrorMessage, @ErrorSeverity, @ErrorState;
+
+	IF (@@TRANCOUNT > 0)
+		ROLLBACK TRANSACTION;
+
+END CATCH
+
+GO
+
+-----------------------------------------------------------
+
+CREATE OR ALTER PROCEDURE [app].[spGetItemsPerCollection]
+	@collection_id int,
+	@search varchar(250)
+	
+AS
+
+BEGIN TRY
+
+	IF (@search IS NOT NULL AND LEN(LTRIM(RTRIM(@search))) > 0) SELECT * FROM [app].[vwItems_Search] WHERE COLLECTION_ID = @collection_id AND FULLDATA LIKE '%' + LTRIM(RTRIM(@search)) + '%'
+	ELSE SELECT * FROM [app].[vwItems] WHERE COLLECTION_ID = @collection_id
 
 END TRY
 
