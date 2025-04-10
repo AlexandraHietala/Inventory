@@ -1,23 +1,6 @@
 USE [StarryEdenItem]
 GO
 
-EXEC [app].[spGetBrand] 1
-EXEC [app].[spGetBrands] NULL
-EXEC [app].[spGetBrands] 'cocoa'
-EXEC [app].[spAddBrand] 'MyTest Brand', 'This is just for testing', 'AHIETALA'
-EXEC [app].[spAddBrand] 'St. James Infirmary', 'Oh Cocoa', 'AHIETALA'
-EXEC [app].[spUpdateBrand] 3, 'St. James Infirmary', NULL, 'AHIETALA'
-EXEC [app].[spRemoveBrand] 3, 'AHIETALA'
-EXEC [app].[spGetHistory] 3, 'Brand'
-
-EXEC [app].[spGetASeries] 1
-EXEC [app].[spGetSeries] NULL
-EXEC [app].[spGetSeries] 'uni'
-EXEC [app].[spAddSeries] 'un-cornos', 1, 'not unicornos', 'AHIETALA'
-EXEC [app].[spUpdateSeries] 3, 'un-cornos', 1, 'def not unicornos', 'AHIETALA'
-EXEC [app].[spRemoveSeries] 3, 'AHIETALA'
-EXEC [app].[spGetHistory] 3, 'Series'
-
 EXEC [app].[spGetItems] NULL
 EXEC [app].[spGetItems] 'min'
 EXEC [app].[spGetItemsPerCollection] 1, 'pri'

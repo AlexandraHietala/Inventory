@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UserApi.Mocks")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+325c70b22341b69c29739baccec38fbea2f50b3e")]
 [assembly: System.Reflection.AssemblyProductAttribute("UserApi.Mocks")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UserApi.Mocks")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

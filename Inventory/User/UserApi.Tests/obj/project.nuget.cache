@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SO8wp8GGDiw=",
+  "dgSpecHash": "beftMbU/bdk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\User\\UserApi.Tests\\UserApi.Tests.csproj",
+  "projectFilePath": "C:\\Users\\alexa\\Source\\Repos\\AlexandraHietala\\Inventory\\Inventory\\User\\UserApi.Tests\\UserApi.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alexa\\.nuget\\packages\\asp.versioning.abstractions\\8.1.0\\asp.versioning.abstractions.8.1.0.nupkg.sha512",
     "C:\\Users\\alexa\\.nuget\\packages\\asp.versioning.http\\8.1.0\\asp.versioning.http.8.1.0.nupkg.sha512",

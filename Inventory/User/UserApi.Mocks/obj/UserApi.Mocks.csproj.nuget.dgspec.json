@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\User\\UserApi.Mocks\\UserApi.Mocks.csproj": {}
+    "C:\\Users\\alexa\\Source\\Repos\\AlexandraHietala\\Inventory\\Inventory\\User\\UserApi.Mocks\\UserApi.Mocks.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\User\\UserApi.Mocks\\UserApi.Mocks.csproj": {
+    "C:\\Users\\alexa\\Source\\Repos\\AlexandraHietala\\Inventory\\Inventory\\User\\UserApi.Mocks\\UserApi.Mocks.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\User\\UserApi.Mocks\\UserApi.Mocks.csproj",
+        "projectUniqueName": "C:\\Users\\alexa\\Source\\Repos\\AlexandraHietala\\Inventory\\Inventory\\User\\UserApi.Mocks\\UserApi.Mocks.csproj",
         "projectName": "UserApi.Mocks",
-        "projectPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\User\\UserApi.Mocks\\UserApi.Mocks.csproj",
+        "projectPath": "C:\\Users\\alexa\\Source\\Repos\\AlexandraHietala\\Inventory\\Inventory\\User\\UserApi.Mocks\\UserApi.Mocks.csproj",
         "packagesPath": "C:\\Users\\alexa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\User\\UserApi.Mocks\\obj\\",
+        "outputPath": "C:\\Users\\alexa\\Source\\Repos\\AlexandraHietala\\Inventory\\Inventory\\User\\UserApi.Mocks\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,8 +44,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -84,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -10,8 +10,6 @@ namespace ItemApi.Data.DataOperations.V1
     public interface IVerifyOperationsV1
     {
         Task<bool> VerifyItem(int id);
-        Task<bool> VerifySeries(int id);
-        Task<bool> VerifyBrand(int id);
         Task<bool> VerifyItemComment(int id);
     }
 
@@ -49,56 +47,6 @@ namespace ItemApi.Data.DataOperations.V1
             catch (Exception e)
             {
                 _logger.LogDebug($"VerifyItem Exception: {e}. Suppressing exception and returning false.");
-                return false;
-            }
-        }
-
-        public async Task<bool> VerifySeries(int id)
-        {
-            try
-            {
-                _logger.LogDebug("VerifySeries request received.");
-
-                using IDbConnection connection = new SqlConnection(_connString);
-                SeriesDto series = await connection.QueryFirstAsync<SeriesDto>("[app].[spGetASeries]", new { id = id }, commandType: CommandType.StoredProcedure);
-
-                _logger.LogInformation("VerifySeries success response.");
-                if (series != null) return true;
-                else return false;
-            }
-            catch (InvalidOperationException ioe)
-            {
-                _logger.LogDebug($"VerifySeries InvalidOperationException: {ioe}. Suppressing exception and returning false.");
-                return false;
-            }
-            catch (Exception e)
-            {
-                _logger.LogDebug($"VerifySeries Exception: {e}. Suppressing exception and returning false.");
-                return false;
-            }
-        }
-
-        public async Task<bool> VerifyBrand(int id)
-        {
-            try
-            {
-                _logger.LogDebug("VerifyBrand request received.");
-
-                using IDbConnection connection = new SqlConnection(_connString);
-                BrandDto brand = await connection.QueryFirstAsync<BrandDto>("[app].[spGetBrand]", new { id = id }, commandType: CommandType.StoredProcedure);
-
-                _logger.LogInformation("VerifyBrand success response.");
-                if (brand != null) return true;
-                else return false;
-            }
-            catch (InvalidOperationException ioe)
-            {
-                _logger.LogDebug($"VerifyBrand InvalidOperationException: {ioe}. Suppressing exception and returning false.");
-                return false;
-            }
-            catch (Exception e)
-            {
-                _logger.LogDebug($"VerifyBrand Exception: {e}. Suppressing exception and returning false.");
                 return false;
             }
         }
