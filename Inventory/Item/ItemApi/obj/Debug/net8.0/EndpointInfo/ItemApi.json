@@ -10,41 +10,6 @@
     "version": "v1.0"
   },
   "paths": {
-    "/api/v1/brand/addbrand": {
-      "post": {
-        "tags": [
-          "AddBrandControllerV1"
-        ],
-        "parameters": [
-          {
-            "name": "brandName",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "description",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "lastmodifiedby",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
     "/api/v1/comment/additemcomment": {
       "post": {
         "tags": [
@@ -87,6 +52,14 @@
           "AddItemControllerV1"
         ],
         "parameters": [
+          {
+            "name": "collectionId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
           {
             "name": "status",
             "in": "query",
@@ -167,75 +140,6 @@
               "type": "string"
             }
           }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/v1/series/addseries": {
-      "post": {
-        "tags": [
-          "AddSeriesControllerV1"
-        ],
-        "parameters": [
-          {
-            "name": "seriesName",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "description",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "lastmodifiedby",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/v1/brand/getbrand": {
-      "get": {
-        "tags": [
-          "GetBrandControllerV1"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/v1/brand/getbrands": {
-      "get": {
-        "tags": [
-          "GetBrandControllerV1"
         ],
         "responses": {
           "200": {
@@ -322,59 +226,18 @@
         }
       }
     },
-    "/api/v1/series/getaseries": {
+    "/api/v1/item/getitemspercollection": {
       "get": {
         "tags": [
-          "GetSeriesControllerV1"
+          "GetItemControllerV1"
         ],
         "parameters": [
           {
-            "name": "id",
+            "name": "collectionId",
             "in": "query",
             "schema": {
               "type": "integer",
               "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/v1/series/getseries": {
-      "get": {
-        "tags": [
-          "GetSeriesControllerV1"
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/v1/brand/removebrand": {
-      "delete": {
-        "tags": [
-          "RemoveBrandControllerV1"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "lastmodifiedby",
-            "in": "query",
-            "schema": {
-              "type": "string"
             }
           }
         ],
@@ -426,78 +289,6 @@
             "schema": {
               "type": "integer",
               "format": "int32"
-            }
-          },
-          {
-            "name": "lastmodifiedby",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/v1/series/removeseries": {
-      "delete": {
-        "tags": [
-          "RemoveSeriesControllerV1"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "lastmodifiedby",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/v1/brand/updatebrand": {
-      "put": {
-        "tags": [
-          "UpdateBrandControllerV1"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "brandName",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "description",
-            "in": "query",
-            "schema": {
-              "type": "string"
             }
           },
           {
@@ -574,6 +365,14 @@
             }
           },
           {
+            "name": "collectionId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
             "name": "status",
             "in": "query",
             "schema": {
@@ -641,49 +440,6 @@
           },
           {
             "name": "photo",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "lastmodifiedby",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/v1/series/updateseries": {
-      "put": {
-        "tags": [
-          "UpdateSeriesControllerV1"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "seriesName",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "description",
             "in": "query",
             "schema": {
               "type": "string"

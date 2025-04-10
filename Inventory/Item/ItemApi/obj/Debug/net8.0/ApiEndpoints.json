@@ -1,109 +1,5 @@
 [
   {
-    "ContainingType": "ItemApi.Controllers.V1.AddBrandControllerV1",
-    "Method": "AddBrandV1",
-    "RelativePath": "api/v1/brand/addbrand",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "brandName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "description",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "lastmodifiedby",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "ItemApi.Controllers.V1.GetBrandControllerV1",
-    "Method": "GetBrandV1",
-    "RelativePath": "api/v1/brand/getbrand",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "ItemApi.Controllers.V1.GetBrandControllerV1",
-    "Method": "GetBrandsV1",
-    "RelativePath": "api/v1/brand/getbrands",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "ItemApi.Controllers.V1.RemoveBrandControllerV1",
-    "Method": "RemoveBrandV1",
-    "RelativePath": "api/v1/brand/removebrand",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "lastmodifiedby",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "ItemApi.Controllers.V1.UpdateBrandControllerV1",
-    "Method": "UpdateBrandV1",
-    "RelativePath": "api/v1/brand/updatebrand",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "brandName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "description",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "lastmodifiedby",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "ItemApi.Controllers.V1.AddItemCommentControllerV1",
     "Method": "AddItemCommentV1",
     "RelativePath": "api/v1/comment/additemcomment",
@@ -222,6 +118,11 @@
     "Order": 0,
     "Parameters": [
       {
+        "Name": "collectionId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
         "Name": "status",
         "Type": "System.String",
         "IsRequired": false
@@ -306,6 +207,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "ItemApi.Controllers.V1.GetItemControllerV1",
+    "Method": "GetItemsPerCollectionV1",
+    "RelativePath": "api/v1/item/getitemspercollection",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "collectionId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ItemApi.Controllers.V1.RemoveItemControllerV1",
     "Method": "RemoveItemV1",
     "RelativePath": "api/v1/item/removeitem",
@@ -336,6 +253,11 @@
     "Parameters": [
       {
         "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "collectionId",
         "Type": "System.Int32",
         "IsRequired": false
       },
@@ -386,110 +308,6 @@
       },
       {
         "Name": "photo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "lastmodifiedby",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "ItemApi.Controllers.V1.AddSeriesControllerV1",
-    "Method": "AddSeriesV1",
-    "RelativePath": "api/v1/series/addseries",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "seriesName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "description",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "lastmodifiedby",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "ItemApi.Controllers.V1.GetSeriesControllerV1",
-    "Method": "GetASeriesV1",
-    "RelativePath": "api/v1/series/getaseries",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "ItemApi.Controllers.V1.GetSeriesControllerV1",
-    "Method": "GetSeriesV1",
-    "RelativePath": "api/v1/series/getseries",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "ItemApi.Controllers.V1.RemoveSeriesControllerV1",
-    "Method": "RemoveSeriesV1",
-    "RelativePath": "api/v1/series/removeseries",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "lastmodifiedby",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "ItemApi.Controllers.V1.UpdateSeriesControllerV1",
-    "Method": "UpdateSeriesV1",
-    "RelativePath": "api/v1/series/updateseries",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "seriesName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "description",
         "Type": "System.String",
         "IsRequired": false
       },

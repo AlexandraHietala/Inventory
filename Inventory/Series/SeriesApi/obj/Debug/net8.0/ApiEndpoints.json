@@ -1,0 +1,106 @@
+[
+  {
+    "ContainingType": "SeriesApi.Controllers.V1.AddSeriesControllerV1",
+    "Method": "AddSeriesV1",
+    "RelativePath": "api/v1/series/addseries",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "seriesName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "lastmodifiedby",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SeriesApi.Controllers.V1.GetSeriesControllerV1",
+    "Method": "GetASeriesV1",
+    "RelativePath": "api/v1/series/getaseries",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SeriesApi.Controllers.V1.GetSeriesControllerV1",
+    "Method": "GetSeriesV1",
+    "RelativePath": "api/v1/series/getseries",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SeriesApi.Controllers.V1.RemoveSeriesControllerV1",
+    "Method": "RemoveSeriesV1",
+    "RelativePath": "api/v1/series/removeseries",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "lastmodifiedby",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SeriesApi.Controllers.V1.UpdateSeriesControllerV1",
+    "Method": "UpdateSeriesV1",
+    "RelativePath": "api/v1/series/updateseries",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "seriesName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "lastmodifiedby",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

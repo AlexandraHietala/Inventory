@@ -25,6 +25,62 @@
       {
         "Path": "Collection\\CollectionApi.Workflows\\CollectionApi.Workflows.csproj",
         "Action": "Start"
+      },
+      {
+        "Path": "Item\\ItemApi.Data\\ItemApi.Data.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Item\\ItemApi.Models\\ItemApi.Models.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Item\\ItemApi.Workflows\\ItemApi.Workflows.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "User\\UserApi.Models\\UserApi.Models.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "User\\UserApi.Workflows\\UserApi.Workflows.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Brand\\BrandApi\\BrandApi.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Brand\\BrandApi.Models\\BrandApi.Models.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Brand\\BrandApi.Workflows\\BrandApi.Workflows.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Brand\\BrandApi.Data\\BrandApi.Data.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Series\\SeriesApi\\SeriesApi.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Series\\SeriesApi.Models\\SeriesApi.Models.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Series\\SeriesApi.Data\\SeriesApi.Data.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Series\\SeriesApi.Workflows\\SeriesApi.Workflows.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "User\\UserApi.Data\\UserApi.Data.csproj",
+        "Action": "Start"
       }
     ]
   }
