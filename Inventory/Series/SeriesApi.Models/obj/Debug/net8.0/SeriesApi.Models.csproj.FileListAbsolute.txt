@@ -1,0 +1,15 @@
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Series\SeriesApi.Models\bin\Debug\net8.0\SeriesApi.Models.exe
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Series\SeriesApi.Models\bin\Debug\net8.0\SeriesApi.Models.deps.json
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Series\SeriesApi.Models\bin\Debug\net8.0\SeriesApi.Models.runtimeconfig.json
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Series\SeriesApi.Models\bin\Debug\net8.0\SeriesApi.Models.dll
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Series\SeriesApi.Models\bin\Debug\net8.0\SeriesApi.Models.pdb
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Series\SeriesApi.Models\obj\Debug\net8.0\SeriesApi.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Series\SeriesApi.Models\obj\Debug\net8.0\SeriesApi.Models.AssemblyInfoInputs.cache
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Series\SeriesApi.Models\obj\Debug\net8.0\SeriesApi.Models.AssemblyInfo.cs
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Series\SeriesApi.Models\obj\Debug\net8.0\SeriesApi.Models.csproj.CoreCompileInputs.cache
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Series\SeriesApi.Models\obj\Debug\net8.0\SeriesApi.Models.sourcelink.json
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Series\SeriesApi.Models\obj\Debug\net8.0\SeriesApi.Models.dll
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Series\SeriesApi.Models\obj\Debug\net8.0\refint\SeriesApi.Models.dll
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Series\SeriesApi.Models\obj\Debug\net8.0\SeriesApi.Models.pdb
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Series\SeriesApi.Models\obj\Debug\net8.0\SeriesApi.Models.genruntimeconfig.cache
+C:\Users\alexa\source\repos\AlexandraHietala\Inventory\Inventory\Series\SeriesApi.Models\obj\Debug\net8.0\ref\SeriesApi.Models.dll

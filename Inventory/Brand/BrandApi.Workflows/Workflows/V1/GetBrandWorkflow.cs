@@ -5,6 +5,7 @@ using BrandApi.Data.DataOperations.V1;
 using BrandApi.Models.Classes.V1;
 using BrandApi.Models.Converters.V1;
 using BrandApi.Models.DTOs.V1;
+using BrandApi.Data.Validators.V1;
 
 namespace BrandApi.Workflows.Workflows.V1
 {
@@ -19,7 +20,7 @@ namespace BrandApi.Workflows.Workflows.V1
         private readonly ILogger _logger;
         private readonly IConfiguration _configuration;
         private readonly IGetBrandOperationsV1 _getBrandOperations;
-        private readonly IVerifyOperationsV1 _verifyOperations;
+        private readonly IBrandDataValidatorV1 _dataValidator;
         private readonly IBrandWorkflowValidatorV1 _workflowValidator;
 
         public GetBrandWorkflowV1(ILoggerFactory loggerFactory, IConfiguration configuration)
@@ -27,8 +28,8 @@ namespace BrandApi.Workflows.Workflows.V1
             _logger = loggerFactory.CreateLogger<GetBrandWorkflowV1>();
             _configuration = configuration;
             _getBrandOperations = new GetBrandOperationsV1(loggerFactory, configuration);
-            _verifyOperations = new VerifyOperationsV1(loggerFactory, configuration);
-            _workflowValidator = new BrandWorkflowValidatorV1(loggerFactory, configuration, _verifyOperations);
+            _dataValidator = new BrandDataValidatorV1(loggerFactory, configuration);
+            _workflowValidator = new BrandWorkflowValidatorV1(loggerFactory, configuration, _dataValidator);
         }
 
         public async Task<Brand> GetBrand(int id)
@@ -51,12 +52,12 @@ namespace BrandApi.Workflows.Workflows.V1
             }
             catch (ArgumentException ae)
             {
-                _logger.LogError($"[200300009] GetBrand ArgumentException: {ae}.");
+                _logger.LogError($"[300300003] GetBrand ArgumentException: {ae}.");
                 throw;
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200300010] GetBrand Exception: {e}.");
+                _logger.LogError($"[300300004] GetBrand Exception: {e}.");
                 throw;
             }
         }
@@ -80,12 +81,12 @@ namespace BrandApi.Workflows.Workflows.V1
             }
             catch (ArgumentException ae)
             {
-                _logger.LogError($"[200300011] GetBrands ArgumentException: {ae}.");
+                _logger.LogError($"[300300005] GetBrands ArgumentException: {ae}.");
                 throw;
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200300012] GetBrands Exception: {e}.");
+                _logger.LogError($"[300300006] GetBrands Exception: {e}.");
                 throw;
             }
         }

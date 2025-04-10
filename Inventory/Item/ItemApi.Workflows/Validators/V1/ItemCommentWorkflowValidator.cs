@@ -1,8 +1,8 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using ItemApi.Data.DataOperations.V1;
 using ItemApi.Models.Classes.V1;
 using ItemApi.Models.System;
+using ItemApi.Data.Validators.V1;
 
 namespace ItemApi.Workflows.Validators.V1
 {
@@ -18,13 +18,15 @@ namespace ItemApi.Workflows.Validators.V1
     {
         private readonly ILogger _logger;
         private readonly IConfiguration _configuration;
-        private readonly IVerifyOperationsV1 _verifyOperations;
+        private readonly IItemDataValidatorV1 _itemDataValidator;
+        private readonly IItemCommentDataValidatorV1 _commentDataValidator;
 
-        public ItemCommentWorkflowValidatorV1(ILoggerFactory loggerFactory, IConfiguration configuration, IVerifyOperationsV1 verifyOperations)
+        public ItemCommentWorkflowValidatorV1(ILoggerFactory loggerFactory, IConfiguration configuration, IItemDataValidatorV1 itemDataValidator, IItemCommentDataValidatorV1 commentDataValidator)
         {
             _logger = loggerFactory.CreateLogger<ItemCommentWorkflowValidatorV1>();
             _configuration = configuration;
-            _verifyOperations = verifyOperations;
+            _itemDataValidator = itemDataValidator;
+            _commentDataValidator = commentDataValidator;
         }
 
         public async Task<string> ValidateAddItemComment(ItemComment comment)
@@ -32,12 +34,12 @@ namespace ItemApi.Workflows.Validators.V1
             List<ValidationFailure> failureList = new List<ValidationFailure>();
 
             if (comment == null)
-                failureList.Add(new ValidationFailure() { Code = 200400017, Message = "Comment object is invalid." });
+                failureList.Add(new ValidationFailure() { Code = 200400001, Message = "Comment object is invalid." });
 
             if (comment != null)
             {
                 bool itemExists = await ValidateItemExists(comment.ItemId);
-                if (!itemExists) failureList.Add(new ValidationFailure() { Code = 200400018, Message = "Item does not exist." });
+                if (!itemExists) failureList.Add(new ValidationFailure() { Code = 200400002, Message = "Item does not exist." });
             }
 
             string failures = string.Empty;
@@ -50,18 +52,18 @@ namespace ItemApi.Workflows.Validators.V1
             List<ValidationFailure> failureList = new List<ValidationFailure>();
 
             if (comment == null)
-                failureList.Add(new ValidationFailure() { Code = 200400019, Message = "Comment object is invalid." });
+                failureList.Add(new ValidationFailure() { Code = 200400003, Message = "Comment object is invalid." });
 
             if (comment != null)
             {
                 bool itemExists = await ValidateItemExists(comment.ItemId);
-                if (!itemExists) failureList.Add(new ValidationFailure() { Code = 200400020, Message = "Item does not exist." });
+                if (!itemExists) failureList.Add(new ValidationFailure() { Code = 200400004, Message = "Item does not exist." });
             }
 
             if (comment != null)
             {
                 bool itemExists = await ValidateItemCommentExists(comment.Id);
-                if (!itemExists) failureList.Add(new ValidationFailure() { Code = 200400021, Message = "Comment does not exist." });
+                if (!itemExists) failureList.Add(new ValidationFailure() { Code = 200400005, Message = "Comment does not exist." });
             }
 
             string failures = string.Empty;
@@ -74,7 +76,7 @@ namespace ItemApi.Workflows.Validators.V1
             List<ValidationFailure> failureList = new List<ValidationFailure>();
 
             bool itemExists = await ValidateItemCommentExists(id);
-            if (!itemExists) failureList.Add(new ValidationFailure() { Code = 200400022, Message = "Comment does not exist." });
+            if (!itemExists) failureList.Add(new ValidationFailure() { Code = 200400006, Message = "Comment does not exist." });
 
             string failures = string.Empty;
             foreach (var failure in failureList) failures = failures + "[" + failure.Code.ToString() + "] " + failure.Message + " ";
@@ -86,7 +88,7 @@ namespace ItemApi.Workflows.Validators.V1
             List<ValidationFailure> failureList = new List<ValidationFailure>();
 
             bool itemExists = await ValidateItemExists(id);
-            if (!itemExists) failureList.Add(new ValidationFailure() { Code = 200400024, Message = "Item does not exist." });
+            if (!itemExists) failureList.Add(new ValidationFailure() { Code = 200400007, Message = "Item does not exist." });
 
             string failures = string.Empty;
             foreach (var failure in failureList) failures = failures + "[" + failure.Code.ToString() + "] " + failure.Message + " ";
@@ -95,13 +97,13 @@ namespace ItemApi.Workflows.Validators.V1
 
         private async Task<bool> ValidateItemExists(int id)
         {
-            bool valid = await _verifyOperations.VerifyItem(id);
+            bool valid = await _itemDataValidator.VerifyItem(id);
             return valid;
         }
 
         private async Task<bool> ValidateItemCommentExists(int id)
         {
-            bool valid = await _verifyOperations.VerifyItemComment(id);
+            bool valid = await _commentDataValidator.VerifyItemComment(id);
             return valid;
         }
     }

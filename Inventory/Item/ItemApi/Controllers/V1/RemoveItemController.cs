@@ -17,14 +17,14 @@ namespace ItemApi.Controllers.V1
     {
         private readonly ILogger _logger;
         private readonly IConfiguration _configuration;
-        private readonly IGeneralControllerValidatorV1 _controllerValidator;
+        private readonly IItemControllerValidatorV1 _controllerValidator;
         private readonly IRemoveItemWorkflowV1 _removeItemWorkflow;
 
         public RemoveItemControllerV1(ILoggerFactory loggerFactory, IConfiguration configuration)
         {
             _logger = loggerFactory.CreateLogger<RemoveItemControllerV1>();
             _configuration = configuration;
-            _controllerValidator = new GeneralControllerValidatorV1();
+            _controllerValidator = new ItemControllerValidatorV1();
             _removeItemWorkflow = new RemoveItemWorkflowV1(loggerFactory, configuration);
         }
 
@@ -38,7 +38,7 @@ namespace ItemApi.Controllers.V1
             try
             {
                 // Validate
-                var failures = _controllerValidator.ValidateId(id);
+                var failures = _controllerValidator.ValidateItemId(id);
                 if (!string.IsNullOrEmpty(failures)) throw new ArgumentException(failures);
 
                 // Process
@@ -50,18 +50,18 @@ namespace ItemApi.Controllers.V1
             }
             catch (ArgumentException ae)
             {
-                _logger.LogError($"[200100043] RemoveItem ArgumentException: {ae}.");
+                _logger.LogError($"[200100025] RemoveItem ArgumentException: {ae}.");
                 return BadRequest(ae.Message);
             }
             catch (InvalidOperationException ioe)
             {
-                _logger.LogError($"[200100044] RemoveItem InvalidOperationException: {ioe}.");
-                return NotFound("[200100044] " + ioe.Message);
+                _logger.LogError($"[200100026] RemoveItem InvalidOperationException: {ioe}.");
+                return NotFound("[200100026] " + ioe.Message);
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200100045] RemoveItem Exception: {e}.");
-                return Problem("[200100045] " + e.Message);
+                _logger.LogError($"[200100027] RemoveItem Exception: {e}.");
+                return Problem("[200100027] " + e.Message);
             }
         }
     }

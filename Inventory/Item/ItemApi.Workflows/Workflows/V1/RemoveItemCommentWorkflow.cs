@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using ItemApi.Data.DataOperations.V1;
 using ItemApi.Workflows.Validators.V1;
+using ItemApi.Data.Validators.V1;
 
 namespace ItemApi.Workflows.Workflows.V1
 {
@@ -15,7 +16,8 @@ namespace ItemApi.Workflows.Workflows.V1
         private readonly ILogger _logger;
         private readonly IConfiguration _configuration;
         private readonly IRemoveItemCommentOperationsV1 _removeItemCommentOperations;
-        private readonly IVerifyOperationsV1 _verifyOperations;
+        private readonly IItemDataValidatorV1 _itemDataValidator;
+        private readonly IItemCommentDataValidatorV1 _itemCommentDataValidator;
         private readonly IItemCommentWorkflowValidatorV1 _workflowValidator;
 
         public RemoveItemCommentWorkflowV1(ILoggerFactory loggerFactory, IConfiguration configuration)
@@ -23,8 +25,9 @@ namespace ItemApi.Workflows.Workflows.V1
             _logger = loggerFactory.CreateLogger<RemoveItemCommentWorkflowV1>();
             _configuration = configuration;
             _removeItemCommentOperations = new RemoveItemCommentOperationsV1(loggerFactory, configuration);
-            _verifyOperations = new VerifyOperationsV1(loggerFactory, configuration);
-            _workflowValidator = new ItemCommentWorkflowValidatorV1(loggerFactory, configuration, _verifyOperations);
+            _itemDataValidator = new ItemDataValidatorV1(loggerFactory, configuration);
+            _itemCommentDataValidator = new ItemCommentDataValidatorV1(loggerFactory, configuration);
+            _workflowValidator = new ItemCommentWorkflowValidatorV1(loggerFactory, configuration, _itemDataValidator, _itemCommentDataValidator);
         }
 
         
@@ -47,12 +50,12 @@ namespace ItemApi.Workflows.Workflows.V1
             }
             catch (ArgumentException ae)
             {
-                _logger.LogError($"[200300027] RemoveItemComment ArgumentException: {ae}.");
+                _logger.LogError($"[200300015] RemoveItemComment ArgumentException: {ae}.");
                 throw;
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200300028] RemoveItemComment Exception: {e}.");
+                _logger.LogError($"[200300016] RemoveItemComment Exception: {e}.");
                 throw;
             }
         }

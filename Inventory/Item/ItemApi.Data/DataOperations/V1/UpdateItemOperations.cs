@@ -41,18 +41,18 @@ namespace ItemApi.Data.DataOperations.V1
             {
                 if (ioe.Message == "Sequence contains no elements")
                 {
-                    _logger.LogError($"[200500010] UpdateItem Error while updating item: {ioe}");
+                    _logger.LogError($"[200500031] UpdateItem Error while updating item: {ioe}");
                     throw;
                 }
                 else
                 {
-                    _logger.LogError($"[200500011] UpdateItem InvalidOperationException: {ioe}.");
+                    _logger.LogError($"[200500032] UpdateItem InvalidOperationException: {ioe}.");
                     throw;
                 }
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200500012] UpdateItem Exception: {e}.");
+                _logger.LogError($"[200500033] UpdateItem Exception: {e}.");
                 throw;
             }
         }

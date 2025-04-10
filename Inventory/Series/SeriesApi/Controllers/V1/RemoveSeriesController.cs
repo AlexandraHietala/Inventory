@@ -17,14 +17,14 @@ namespace SeriesApi.Controllers.V1
     {
         private readonly ILogger _logger;
         private readonly IConfiguration _configuration;
-        private readonly IGeneralControllerValidatorV1 _controllerValidator;
+        private readonly ISeriesControllerValidatorV1 _controllerValidator;
         private readonly IRemoveSeriesWorkflowV1 _removeSeriesWorkflow;
 
         public RemoveSeriesControllerV1(ILoggerFactory loggerFactory, IConfiguration configuration)
         {
             _logger = loggerFactory.CreateLogger<RemoveSeriesControllerV1>();
             _configuration = configuration;
-            _controllerValidator = new GeneralControllerValidatorV1();
+            _controllerValidator = new SeriesControllerValidatorV1();
             _removeSeriesWorkflow = new RemoveSeriesWorkflowV1(loggerFactory, configuration);
         }
 
@@ -38,7 +38,7 @@ namespace SeriesApi.Controllers.V1
             try
             {
                 // Validate
-                var failures = _controllerValidator.ValidateId(id);
+                var failures = _controllerValidator.ValidateSeriesId(id);
                 if (!string.IsNullOrEmpty(failures)) throw new ArgumentException(failures);
 
                 // Process
@@ -50,18 +50,18 @@ namespace SeriesApi.Controllers.V1
             }
             catch (ArgumentException ae)
             {
-                _logger.LogError($"[200100046] RemoveSeries ArgumentException: {ae}.");
+                _logger.LogError($"[400100007] RemoveSeries ArgumentException: {ae}.");
                 return BadRequest(ae.Message);
             }
             catch (InvalidOperationException ioe)
             {
-                _logger.LogError($"[200100047] RemoveSeries InvalidOperationException: {ioe}.");
-                return NotFound("[200100047] " + ioe.Message);
+                _logger.LogError($"[400100008] RemoveSeries InvalidOperationException: {ioe}.");
+                return NotFound("[400100008] " + ioe.Message);
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200100048] RemoveSeries Exception: {e}.");
-                return Problem("[200100048] " + e.Message);
+                _logger.LogError($"[400100009] RemoveSeries Exception: {e}.");
+                return Problem("[400100009] " + e.Message);
             }
         }
     }

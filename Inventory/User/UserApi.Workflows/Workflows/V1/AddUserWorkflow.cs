@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using UserApi.Data.DataOperations.V1;
+using UserApi.Data.Validators.V1;
 using UserApi.Models.Classes.V1;
 using UserApi.Models.Converters.V1;
 using UserApi.Models.DTOs.V1;
@@ -18,8 +19,9 @@ namespace UserApi.Workflows.Workflows.V1
         private readonly ILogger _logger;
         private readonly IConfiguration _configuration;
         private readonly IAddUserOperationsV1 _addUserOperations;
-        private readonly IVerifyOperationsV1 _verifyOperations;
-        private readonly IWorkflowValidatorV1 _workflowValidator;
+        private readonly IUserDataValidatorV1 _userDataValidator;
+        private readonly IRoleDataValidatorV1 _roleDataValidator;
+        private readonly IUserWorkflowValidatorV1 _workflowValidator;
 
 
         public AddUserWorkflowV1(ILoggerFactory loggerFactory, IConfiguration configuration)
@@ -27,8 +29,9 @@ namespace UserApi.Workflows.Workflows.V1
             _logger = loggerFactory.CreateLogger<AddUserWorkflowV1>();
             _configuration = configuration;
             _addUserOperations = new AddUserOperationsV1(loggerFactory, configuration);
-            _verifyOperations = new VerifyOperationsV1(loggerFactory, configuration);
-            _workflowValidator = new WorkflowValidatorV1(loggerFactory, configuration, _verifyOperations);
+            _userDataValidator = new UserDataValidatorV1(loggerFactory, configuration);
+            _roleDataValidator = new RoleDataValidatorV1(loggerFactory, configuration);
+            _workflowValidator = new UserWorkflowValidatorV1(loggerFactory, configuration, _userDataValidator, _roleDataValidator);
         }
 
         public async Task<int> AddUser(User user)

@@ -2348,11 +2348,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alexa\\Source\\Repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi\\CollectionApi.csproj",
+      "projectUniqueName": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi\\CollectionApi.csproj",
       "projectName": "CollectionApi",
-      "projectPath": "C:\\Users\\alexa\\Source\\Repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi\\CollectionApi.csproj",
+      "projectPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi\\CollectionApi.csproj",
       "packagesPath": "C:\\Users\\alexa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alexa\\Source\\Repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi\\obj\\",
+      "outputPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2374,11 +2374,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\alexa\\Source\\Repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Models\\CollectionApi.Models.csproj": {
-              "projectPath": "C:\\Users\\alexa\\Source\\Repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Models\\CollectionApi.Models.csproj"
+            "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Models\\CollectionApi.Models.csproj": {
+              "projectPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Models\\CollectionApi.Models.csproj"
             },
-            "C:\\Users\\alexa\\Source\\Repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Workflows\\CollectionApi.Workflows.csproj": {
-              "projectPath": "C:\\Users\\alexa\\Source\\Repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Workflows\\CollectionApi.Workflows.csproj"
+            "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Workflows\\CollectionApi.Workflows.csproj": {
+              "projectPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Workflows\\CollectionApi.Workflows.csproj"
             }
           }
         }
@@ -2392,7 +2392,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -2430,7 +2431,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

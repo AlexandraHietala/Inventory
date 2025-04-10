@@ -18,14 +18,14 @@ namespace ItemApi.Controllers.V1
     {
         private readonly ILogger _logger;
         private readonly IConfiguration _configuration;
-        private readonly IGeneralControllerValidatorV1 _controllerValidator;
+        private readonly IItemControllerValidatorV1 _controllerValidator;
         private readonly IGetItemWorkflowV1 _getItemWorkflow;
 
         public GetItemControllerV1(ILoggerFactory loggerFactory, IConfiguration configuration)
         {
             _logger = loggerFactory.CreateLogger<GetItemControllerV1>();
             _configuration = configuration;
-            _controllerValidator = new GeneralControllerValidatorV1();
+            _controllerValidator = new ItemControllerValidatorV1();
             _getItemWorkflow = new GetItemWorkflowV1(loggerFactory, configuration);
         }
 
@@ -39,7 +39,7 @@ namespace ItemApi.Controllers.V1
             try
             {
                 // Validate
-                var failures = _controllerValidator.ValidateId(id);
+                var failures = _controllerValidator.ValidateItemId(id);
                 if (!string.IsNullOrEmpty(failures)) throw new ArgumentException(failures);
 
                 // Process
@@ -51,18 +51,18 @@ namespace ItemApi.Controllers.V1
             }
             catch (ArgumentException ae)
             {
-                _logger.LogError($"[200100025] GetItem ArgumentException: {ae}.");
+                _logger.LogError($"[200100013] GetItem ArgumentException: {ae}.");
                 return BadRequest(ae.Message);
             }
             catch (InvalidOperationException ioe)
             {
-                _logger.LogError($"[200100026] GetItem InvalidOperationException: {ioe}.");
-                return NotFound("[200100026] " + ioe.Message);
+                _logger.LogError($"[200100014] GetItem InvalidOperationException: {ioe}.");
+                return NotFound("[200100014] " + ioe.Message);
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200100027] GetItem Exception: {e}.");
-                return Problem("[200100027] " + e.Message);
+                _logger.LogError($"[200100015] GetItem Exception: {e}.");
+                return Problem("[200100015] " + e.Message);
             }
         }
 
@@ -87,18 +87,18 @@ namespace ItemApi.Controllers.V1
             }
             catch (ArgumentException ae)
             {
-                _logger.LogError($"[200100028] GetItems ArgumentException: {ae}.");
+                _logger.LogError($"[200100016] GetItems ArgumentException: {ae}.");
                 return BadRequest(ae.Message);
             }
             catch (InvalidOperationException ioe)
             {
-                _logger.LogError($"[200100029] GetItems InvalidOperationException: {ioe}.");
-                return NotFound("[200100029] " + ioe.Message);
+                _logger.LogError($"[200100017] GetItems InvalidOperationException: {ioe}.");
+                return NotFound("[200100017] " + ioe.Message);
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200100030] GetItems Exception: {e}.");
-                return Problem("[200100030] " + e.Message);
+                _logger.LogError($"[200100018] GetItems Exception: {e}.");
+                return Problem("[200100018] " + e.Message);
             }
         }
 
@@ -112,7 +112,7 @@ namespace ItemApi.Controllers.V1
             try
             {
                 // Validate
-                var failures = _controllerValidator.ValidateId(collectionId);
+                var failures = _controllerValidator.ValidateCollectionId(collectionId);
                 if (!string.IsNullOrEmpty(failures)) throw new ArgumentException(failures);
 
                 // Process
@@ -124,18 +124,18 @@ namespace ItemApi.Controllers.V1
             }
             catch (ArgumentException ae)
             {
-                _logger.LogError($"[200100061] GetItemsPerCollectionV1 ArgumentException: {ae}.");
+                _logger.LogError($"[200100019] GetItemsPerCollectionV1 ArgumentException: {ae}.");
                 return BadRequest(ae.Message);
             }
             catch (InvalidOperationException ioe)
             {
-                _logger.LogError($"[200100062] GetItemsPerCollectionV1 InvalidOperationException: {ioe}.");
-                return NotFound("[200100062] " + ioe.Message);
+                _logger.LogError($"[200100020] GetItemsPerCollectionV1 InvalidOperationException: {ioe}.");
+                return NotFound("[200100020] " + ioe.Message);
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200100063] GetItemsPerCollectionV1 Exception: {e}.");
-                return Problem("[200100063] " + e.Message);
+                _logger.LogError($"[200100021] GetItemsPerCollectionV1 Exception: {e}.");
+                return Problem("[200100021] " + e.Message);
             }
         }
 

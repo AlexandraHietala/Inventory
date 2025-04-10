@@ -22,7 +22,7 @@ namespace SeriesApi.Data.DataOperations.V1
         {
             _logger = loggerFactory.CreateLogger<RemoveSeriesOperationsV1>();
             _configuration = configuration;
-            _connString = _configuration.GetConnectionString("StarryEdenItem")!;
+            _connString = _configuration.GetConnectionString("StarryEdenSeries")!;
         }
 
         public async Task RemoveSeries(int id, string lastmodifiedby)
@@ -41,18 +41,18 @@ namespace SeriesApi.Data.DataOperations.V1
             {
                 if (ioe.Message == "Sequence contains no elements")
                 {
-                    _logger.LogError($"[200500049] Error while removing series: {ioe}.");
+                    _logger.LogError($"[400500010] Error while removing series: {ioe}.");
                     throw;
                 }
                 else
                 {
-                    _logger.LogError($"[200500050] RemoveSeries InvalidOperationException: {ioe}.");
+                    _logger.LogError($"[400500011] RemoveSeries InvalidOperationException: {ioe}.");
                     throw;
                 }
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200500051] RemoveSeries Exception: {e}.");
+                _logger.LogError($"[4005000 12] RemoveSeries Exception: {e}.");
                 throw;
             }
         }

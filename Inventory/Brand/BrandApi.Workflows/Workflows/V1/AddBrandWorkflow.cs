@@ -5,6 +5,7 @@ using BrandApi.Models.Classes.V1;
 using BrandApi.Models.Converters.V1;
 using BrandApi.Models.DTOs.V1;
 using BrandApi.Workflows.Validators.V1;
+using BrandApi.Data.Validators.V1;
 
 namespace BrandApi.Workflows.Workflows.V1
 {
@@ -18,7 +19,7 @@ namespace BrandApi.Workflows.Workflows.V1
         private readonly ILogger _logger;
         private readonly IConfiguration _configuration;
         private readonly IAddBrandOperationsV1 _addBrandOperations;
-        private readonly IVerifyOperationsV1 _verifyOperations;
+        private readonly IBrandDataValidatorV1 _dataValidator;
         private readonly IBrandWorkflowValidatorV1 _workflowValidator;
 
 
@@ -27,8 +28,8 @@ namespace BrandApi.Workflows.Workflows.V1
             _logger = loggerFactory.CreateLogger<AddBrandWorkflowV1>();
             _configuration = configuration;
             _addBrandOperations = new AddBrandOperationsV1(loggerFactory, configuration);
-            _verifyOperations = new VerifyOperationsV1(loggerFactory, configuration);
-            _workflowValidator = new BrandWorkflowValidatorV1(loggerFactory, configuration, _verifyOperations);
+            _dataValidator = new BrandDataValidatorV1(loggerFactory, configuration);
+            _workflowValidator = new BrandWorkflowValidatorV1(loggerFactory, configuration, _dataValidator);
         }
 
         public async Task<int> AddBrand(Brand brand)
@@ -51,12 +52,12 @@ namespace BrandApi.Workflows.Workflows.V1
             }
             catch (ArgumentException ae)
             {
-                _logger.LogError($"[200300001] AddBrand ArgumentException: {ae}.");
+                _logger.LogError($"[300300001] AddBrand ArgumentException: {ae}.");
                 throw;
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200300002] AddBrand Exception: {e}.");
+                _logger.LogError($"[300300002] AddBrand Exception: {e}.");
                 throw;
             }
         }

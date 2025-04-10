@@ -61,18 +61,18 @@ namespace ItemApi.Controllers.V1
             }
             catch (ArgumentException ae)
             {
-                _logger.LogError($"[200100052] UpdateItemComment ArgumentException: {ae}.");
+                _logger.LogError($"[200100028] UpdateItemComment ArgumentException: {ae}.");
                 return BadRequest(ae.Message);
             }
             catch (InvalidOperationException ioe)
             {
-                _logger.LogError($"[200100053] UpdateItemComment InvalidOperationException: {ioe}.");
-                return NotFound("[200100053] " + ioe.Message);
+                _logger.LogError($"[200100029] UpdateItemComment InvalidOperationException: {ioe}.");
+                return NotFound("[200100029] " + ioe.Message);
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200100054] UpdateItemComment Exception: {e}.");
-                return Problem("[200100054] " + e.Message);
+                _logger.LogError($"[200100030] UpdateItemComment Exception: {e}.");
+                return Problem("[200100030] " + e.Message);
             }
         }
     }

@@ -18,14 +18,14 @@ namespace CollectionApi.Controllers.V1
     {
         private readonly ILogger _logger;
         private readonly IConfiguration _configuration;
-        private readonly IGeneralControllerValidatorV1 _controllerValidator;
+        private readonly ICollectionControllerValidatorV1 _controllerValidator;
         private readonly IGetCollectionWorkflowV1 _getCollectionWorkflow;
 
         public GetCollectionControllerV1(ILoggerFactory loggerFactory, IConfiguration configuration)
         {
             _logger = loggerFactory.CreateLogger<GetCollectionControllerV1>();
             _configuration = configuration;
-            _controllerValidator = new GeneralControllerValidatorV1();
+            _controllerValidator = new CollectionControllerValidatorV1();
             _getCollectionWorkflow = new GetCollectionWorkflowV1(loggerFactory, configuration);
         }
 
@@ -39,7 +39,7 @@ namespace CollectionApi.Controllers.V1
             try
             {
                 // Validate
-                var failures = _controllerValidator.ValidateId(id);
+                var failures = _controllerValidator.ValidateCollectionId(id);
                 if (!string.IsNullOrEmpty(failures)) throw new ArgumentException(failures);
 
                 // Process
@@ -51,18 +51,18 @@ namespace CollectionApi.Controllers.V1
             }
             catch (ArgumentException ae)
             {
-                _logger.LogError($"[300100001] GetCollection ArgumentException: {ae}.");
+                _logger.LogError($"[500100004] GetCollection ArgumentException: {ae}.");
                 return BadRequest(ae.Message);
             }
             catch (InvalidOperationException ioe)
             {
-                _logger.LogError($"[300100002] GetCollection InvalidOperationException: {ioe}.");
-                return NotFound("[300100002] " + ioe.Message);
+                _logger.LogError($"[500100005] GetCollection InvalidOperationException: {ioe}.");
+                return NotFound("[500100005] " + ioe.Message);
             }
             catch (Exception e)
             {
-                _logger.LogError($"[300100003] GetCollection Exception: {e}.");
-                return Problem("[300100003] " + e.Message);
+                _logger.LogError($"[500100006] GetCollection Exception: {e}.");
+                return Problem("[500100006] " + e.Message);
             }
         }
 
@@ -87,18 +87,18 @@ namespace CollectionApi.Controllers.V1
             }
             catch (ArgumentException ae)
             {
-                _logger.LogError($"[300100004] GetCollections ArgumentException: {ae}.");
+                _logger.LogError($"[500100007] GetCollections ArgumentException: {ae}.");
                 return BadRequest(ae.Message);
             }
             catch (InvalidOperationException ioe)
             {
-                _logger.LogError($"[300100005] GetCollections InvalidOperationException: {ioe}.");
-                return NotFound("[300100005] " + ioe.Message);
+                _logger.LogError($"[500100008] GetCollections InvalidOperationException: {ioe}.");
+                return NotFound("[500100008] " + ioe.Message);
             }
             catch (Exception e)
             {
-                _logger.LogError($"[300100006] GetCollections Exception: {e}.");
-                return Problem("[300100006] " + e.Message);
+                _logger.LogError($"[500100009] GetCollections Exception: {e}.");
+                return Problem("[500100009] " + e.Message);
             }
         }
     }

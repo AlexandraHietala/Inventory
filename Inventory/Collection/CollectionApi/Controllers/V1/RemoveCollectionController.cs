@@ -17,14 +17,14 @@ namespace CollectionApi.Controllers.V1
     {
         private readonly ILogger _logger;
         private readonly IConfiguration _configuration;
-        private readonly IGeneralControllerValidatorV1 _controllerValidator;
+        private readonly ICollectionControllerValidatorV1 _controllerValidator;
         private readonly IRemoveCollectionWorkflowV1 _removeCollectionWorkflow;
 
         public RemoveCollectionControllerV1(ILoggerFactory loggerFactory, IConfiguration configuration)
         {
             _logger = loggerFactory.CreateLogger<RemoveCollectionControllerV1>();
             _configuration = configuration;
-            _controllerValidator = new GeneralControllerValidatorV1();
+            _controllerValidator = new CollectionControllerValidatorV1();
             _removeCollectionWorkflow = new RemoveCollectionWorkflowV1(loggerFactory, configuration);
         }
 
@@ -38,7 +38,7 @@ namespace CollectionApi.Controllers.V1
             try
             {
                 // Validate
-                var failures = _controllerValidator.ValidateId(id);
+                var failures = _controllerValidator.ValidateCollectionId(id);
                 if (!string.IsNullOrEmpty(failures)) throw new ArgumentException(failures);
 
                 // Process
@@ -50,18 +50,18 @@ namespace CollectionApi.Controllers.V1
             }
             catch (ArgumentException ae)
             {
-                _logger.LogError($"[300100009] RemoveCollection ArgumentException: {ae}.");
+                _logger.LogError($"[500100010] RemoveCollection ArgumentException: {ae}.");
                 return BadRequest(ae.Message);
             }
             catch (InvalidOperationException ioe)
             {
-                _logger.LogError($"[300100010] RemoveCollection InvalidOperationException: {ioe}.");
-                return NotFound("[300100010] " + ioe.Message);
+                _logger.LogError($"[500100011] RemoveCollection InvalidOperationException: {ioe}.");
+                return NotFound("[500100011] " + ioe.Message);
             }
             catch (Exception e)
             {
-                _logger.LogError($"[300100011] RemoveCollection Exception: {e}.");
-                return Problem("[300100011] " + e.Message);
+                _logger.LogError($"[500100012] RemoveCollection Exception: {e}.");
+                return Problem("[500100012] " + e.Message);
             }
         }
     }

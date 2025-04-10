@@ -1,6 +1,8 @@
 using System.ComponentModel.DataAnnotations;
+using BrandApi.Models.Classes.V1;
 using CollectionApi.Models.Classes.V1;
 using ItemApi.Models.System;
+using SeriesApi.Models.Classes.V1;
 
 namespace ItemApi.Models.Classes.V1
 {

@@ -24,7 +24,7 @@ namespace SeriesApi.Data.DataOperations.V1
         {
             _logger = loggerFactory.CreateLogger<GetSeriesOperationsV1>();
             _configuration = configuration;
-            _connString = _configuration.GetConnectionString("StarryEdenItem")!;
+            _connString = _configuration.GetConnectionString("StarryEdenSeries")!;
         }
 
         public async Task<SeriesDto> GetASeries(int id)
@@ -45,17 +45,17 @@ namespace SeriesApi.Data.DataOperations.V1
                 {
                     // This series doesn't exist and we somehow missed it on validation
                     _logger.LogInformation($"GetASeries InvalidOperationException: {ioe}. Rethrowing as ArgumentException.");
-                    throw new ArgumentException("[200500037] Series does not exist.");
+                    throw new ArgumentException("[400500004] Series does not exist.");
                 }
                 else
                 {
-                    _logger.LogError($"[200500038] GetASeries InvalidOperationException: {ioe}.");
+                    _logger.LogError($"[400500005] GetASeries InvalidOperationException: {ioe}.");
                     throw;
                 }
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200500039] GetASeries Exception: {e}.");
+                _logger.LogError($"[400500006] GetASeries Exception: {e}.");
                 throw;
             }
         }
@@ -76,17 +76,17 @@ namespace SeriesApi.Data.DataOperations.V1
                 {
                     // This series doesn't exist and we somehow missed it on validation
                     _logger.LogInformation($"GetSeries InvalidOperationException: {ioe}. Rethrowing as ArgumentException.");
-                    throw new ArgumentException("[200500040] Seriess do not exist.");
+                    throw new ArgumentException("[400500007] Seriess do not exist.");
                 }
                 else
                 {
-                    _logger.LogError($"[200500041] GetSeries InvalidOperationException: {ioe}.");
+                    _logger.LogError($"[400500008] GetSeries InvalidOperationException: {ioe}.");
                     throw;
                 }
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200500042] GetSeries Exception: {e}.");
+                _logger.LogError($"[400500009] GetSeries Exception: {e}.");
                 throw;
             }
         }

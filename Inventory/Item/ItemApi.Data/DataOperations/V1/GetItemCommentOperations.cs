@@ -45,17 +45,17 @@ namespace ItemApi.Data.DataOperations.V1
                 {
                     // This comment doesn't exist and we somehow missed it on validation
                     _logger.LogInformation($"GetItemComment InvalidOperationException: {ioe}. Rethrowing as ArgumentException.");
-                    throw new ArgumentException("[200500028] ItemComment does not exist.");
+                    throw new ArgumentException("[200500007] ItemComment does not exist.");
                 }
                 else
                 {
-                    _logger.LogError($"[200500029] GetItemComment InvalidOperationException: {ioe}.");
+                    _logger.LogError($"[200500008] GetItemComment InvalidOperationException: {ioe}.");
                     throw;
                 }
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200500030] GetItemComment Exception: {e}.");
+                _logger.LogError($"[200500009] GetItemComment Exception: {e}.");
                 throw;
             }
         }
@@ -76,17 +76,17 @@ namespace ItemApi.Data.DataOperations.V1
                 {
                     // This comment doesn't exist and we somehow missed it on validation
                     _logger.LogInformation($"GetItemComments InvalidOperationException: {ioe}. Rethrowing as ArgumentException.");
-                    throw new ArgumentException("[200500031] ItemComments do not exist.");
+                    throw new ArgumentException("[200500010] ItemComments do not exist.");
                 }
                 else
                 {
-                    _logger.LogError($"[200500032] GetItemComments InvalidOperationException: {ioe}.");
+                    _logger.LogError($"[200500011] GetItemComments InvalidOperationException: {ioe}.");
                     throw;
                 }
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200500033] GetItemComments Exception: {e}.");
+                _logger.LogError($"[200500012] GetItemComments Exception: {e}.");
                 throw;
             }
         }

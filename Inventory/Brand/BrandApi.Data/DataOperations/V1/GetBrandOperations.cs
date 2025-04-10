@@ -45,17 +45,17 @@ namespace BrandApi.Data.DataOperations.V1
                 {
                     // This brand doesn't exist and we somehow missed it on validation
                     _logger.LogInformation($"GetBrand InvalidOperationException: {ioe}. Rethrowing as ArgumentException.");
-                    throw new ArgumentException("[200500022] Brand does not exist.");
+                    throw new ArgumentException("[200500004] Brand does not exist.");
                 }
                 else
                 {
-                    _logger.LogError($"[200500023] GetBrand InvalidOperationException: {ioe}.");
+                    _logger.LogError($"[300500005] GetBrand InvalidOperationException: {ioe}.");
                     throw;
                 }
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200500024] GetBrand Exception: {e}.");
+                _logger.LogError($"[300500006] GetBrand Exception: {e}.");
                 throw;
             }
         }
@@ -76,17 +76,17 @@ namespace BrandApi.Data.DataOperations.V1
                 {
                     // This brand doesn't exist and we somehow missed it on validation
                     _logger.LogInformation($"GetBrands InvalidOperationException: {ioe}. Rethrowing as ArgumentException.");
-                    throw new ArgumentException("[200500025] Brands do not exist.");
+                    throw new ArgumentException("[200500007] Brands do not exist.");
                 }
                 else
                 {
-                    _logger.LogError($"[200500026] GetBrands InvalidOperationException: {ioe}.");
+                    _logger.LogError($"[300500008] GetBrands InvalidOperationException: {ioe}.");
                     throw;
                 }
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200500027] GetBrands Exception: {e}.");
+                _logger.LogError($"[300500009] GetBrands Exception: {e}.");
                 throw;
             }
         }

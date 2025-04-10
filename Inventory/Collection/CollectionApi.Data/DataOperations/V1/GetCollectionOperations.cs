@@ -45,17 +45,17 @@ namespace CollectionApi.Data.DataOperations.V1
                 {
                     // This collection doesn't exist and we somehow missed it on validation
                     _logger.LogInformation($"GetCollection InvalidOperationException: {ioe}. Rethrowing as ArgumentException.");
-                    throw new ArgumentException("[300500004] Collection does not exist.");
+                    throw new ArgumentException("[500500004] Collection does not exist.");
                 }
                 else
                 {
-                    _logger.LogError($"[300500005] GetCollection InvalidOperationException: {ioe}.");
+                    _logger.LogError($"[500500005] GetCollection InvalidOperationException: {ioe}.");
                     throw;
                 }
             }
             catch (Exception e)
             {
-                _logger.LogError($"[300500006] GetCollection Exception: {e}.");
+                _logger.LogError($"[500500006] GetCollection Exception: {e}.");
                 throw;
             }
         }
@@ -76,17 +76,17 @@ namespace CollectionApi.Data.DataOperations.V1
                 {
                     // This collection doesn't exist and we somehow missed it on validation
                     _logger.LogInformation($"GetCollections InvalidOperationException: {ioe}. Rethrowing as ArgumentException.");
-                    throw new ArgumentException("[300500007] Collections do not exist.");
+                    throw new ArgumentException("[500500007] Collections do not exist.");
                 }
                 else
                 {
-                    _logger.LogError($"[300500008] GetCollections InvalidOperationException: {ioe}.");
+                    _logger.LogError($"[500500008] GetCollections InvalidOperationException: {ioe}.");
                     throw;
                 }
             }
             catch (Exception e)
             {
-                _logger.LogError($"[300500009] GetCollections Exception: {e}.");
+                _logger.LogError($"[500500009] GetCollections Exception: {e}.");
                 throw;
             }
         }

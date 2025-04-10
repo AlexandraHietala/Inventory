@@ -41,18 +41,18 @@ namespace CollectionApi.Data.DataOperations.V1
             {
                 if (ioe.Message == "Sequence contains no elements")
                 {
-                    _logger.LogError($"[300500013] UpdateCollection Error while updating collection: {ioe}");
+                    _logger.LogError($"[500500013] UpdateCollection Error while updating collection: {ioe}");
                     throw;
                 }
                 else
                 {
-                    _logger.LogError($"[300500014] UpdateCollection InvalidOperationException: {ioe}.");
+                    _logger.LogError($"[500500014] UpdateCollection InvalidOperationException: {ioe}.");
                     throw;
                 }
             }
             catch (Exception e)
             {
-                _logger.LogError($"[300500015] UpdateCollection Exception: {e}.");
+                _logger.LogError($"[500500015] UpdateCollection Exception: {e}.");
                 throw;
             }
         }

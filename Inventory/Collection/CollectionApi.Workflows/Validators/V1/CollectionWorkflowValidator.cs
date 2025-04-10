@@ -1,8 +1,8 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using CollectionApi.Data.DataOperations.V1;
 using CollectionApi.Models.Classes.V1;
 using CollectionApi.Models.System;
+using CollectionApi.Data.Validators.V1;
 
 namespace CollectionApi.Workflows.Validators.V1
 {
@@ -17,13 +17,13 @@ namespace CollectionApi.Workflows.Validators.V1
     {
         private readonly ILogger _logger;
         private readonly IConfiguration _configuration;
-        private readonly IVerifyOperationsV1 _verifyOperations;
+        private readonly ICollectionDataValidatorV1 _dataValidator;
 
-        public CollectionWorkflowValidatorV1(ILoggerFactory loggerFactory, IConfiguration configuration, IVerifyOperationsV1 verifyOperations)
+        public CollectionWorkflowValidatorV1(ILoggerFactory loggerFactory, IConfiguration configuration, ICollectionDataValidatorV1 dataValidator)
         {
             _logger = loggerFactory.CreateLogger<CollectionWorkflowValidatorV1>();
             _configuration = configuration;
-            _verifyOperations = verifyOperations;
+            _dataValidator = dataValidator;
         }
 
         public async Task<string> ValidateAddCollection(Collection collection)
@@ -31,7 +31,7 @@ namespace CollectionApi.Workflows.Validators.V1
             List<ValidationFailure> failureList = new List<ValidationFailure>();
 
             if (collection == null)
-                failureList.Add(new ValidationFailure() { Code = 300400001, Message = "Collection object is invalid." });
+                failureList.Add(new ValidationFailure() { Code = 500400001, Message = "Collection object is invalid." });
 
             string failures = string.Empty;
             foreach (var failure in failureList) failures = failures + "[" + failure.Code.ToString() + "] " + failure.Message + " ";
@@ -43,12 +43,12 @@ namespace CollectionApi.Workflows.Validators.V1
             List<ValidationFailure> failureList = new List<ValidationFailure>();
 
             if (collection == null)
-                failureList.Add(new ValidationFailure() { Code = 300400002, Message = "Collection object is invalid." });
+                failureList.Add(new ValidationFailure() { Code = 500400002, Message = "Collection object is invalid." });
 
             if (collection != null)
             {
                 bool collectionExists = await ValidateCollectionExists(collection.Id);
-                if (!collectionExists) failureList.Add(new ValidationFailure() { Code = 300400003, Message = "Collection does not exist." });
+                if (!collectionExists) failureList.Add(new ValidationFailure() { Code = 500400003, Message = "Collection does not exist." });
             }
 
             string failures = string.Empty;
@@ -61,7 +61,7 @@ namespace CollectionApi.Workflows.Validators.V1
             List<ValidationFailure> failureList = new List<ValidationFailure>();
 
             bool collectionExists = await ValidateCollectionExists(id);
-            if (!collectionExists) failureList.Add(new ValidationFailure() { Code = 300400004, Message = "Collection does not exist." });
+            if (!collectionExists) failureList.Add(new ValidationFailure() { Code = 500400004, Message = "Collection does not exist." });
 
             string failures = string.Empty;
             foreach (var failure in failureList) failures = failures + "[" + failure.Code.ToString() + "] " + failure.Message + " ";
@@ -70,7 +70,7 @@ namespace CollectionApi.Workflows.Validators.V1
 
         private async Task<bool> ValidateCollectionExists(int id)
         {
-            bool valid = await _verifyOperations.VerifyCollection(id);
+            bool valid = await _dataValidator.VerifyCollection(id);
             return valid;
         }
     }

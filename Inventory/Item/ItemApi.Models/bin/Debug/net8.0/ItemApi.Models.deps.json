@@ -7,14 +7,58 @@
   "targets": {
     ".NETCoreApp,Version=v8.0": {
       "ItemApi.Models/1.0.0": {
+        "dependencies": {
+          "BrandApi.Models": "1.0.0",
+          "CollectionApi.Models": "1.0.0",
+          "SeriesApi.Models": "1.0.0"
+        },
         "runtime": {
           "ItemApi.Models.dll": {}
+        }
+      },
+      "BrandApi.Models/1.0.0": {
+        "runtime": {
+          "BrandApi.Models.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "CollectionApi.Models/1.0.0": {
+        "runtime": {
+          "CollectionApi.Models.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "SeriesApi.Models/1.0.0": {
+        "runtime": {
+          "SeriesApi.Models.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
   },
   "libraries": {
     "ItemApi.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BrandApi.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CollectionApi.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SeriesApi.Models/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

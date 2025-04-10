@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using CollectionApi.Data.DataOperations.V1;
 using CollectionApi.Workflows.Validators.V1;
+using CollectionApi.Data.Validators.V1;
 
 namespace CollectionApi.Workflows.Workflows.V1
 {
@@ -15,7 +16,7 @@ namespace CollectionApi.Workflows.Workflows.V1
         private readonly ILogger _logger;
         private readonly IConfiguration _configuration;
         private readonly IRemoveCollectionOperationsV1 _removeCollectionOperations;
-        private readonly IVerifyOperationsV1 _verifyOperations;
+        private readonly ICollectionDataValidatorV1 _dataValidator;
         private readonly ICollectionWorkflowValidatorV1 _workflowValidator;
 
         public RemoveCollectionWorkflowV1(ILoggerFactory loggerFactory, IConfiguration configuration)
@@ -23,8 +24,8 @@ namespace CollectionApi.Workflows.Workflows.V1
             _logger = loggerFactory.CreateLogger<RemoveCollectionWorkflowV1>();
             _configuration = configuration;
             _removeCollectionOperations = new RemoveCollectionOperationsV1(loggerFactory, configuration);
-            _verifyOperations = new VerifyOperationsV1(loggerFactory, configuration);
-            _workflowValidator = new CollectionWorkflowValidatorV1(loggerFactory, configuration, _verifyOperations);
+            _dataValidator = new CollectionDataValidatorV1(loggerFactory, configuration);
+            _workflowValidator = new CollectionWorkflowValidatorV1(loggerFactory, configuration, _dataValidator);
         }
 
         public async Task RemoveCollection(int id, string lastmodifiedby)
@@ -46,12 +47,12 @@ namespace CollectionApi.Workflows.Workflows.V1
             }
             catch (ArgumentException ae)
             {
-                _logger.LogError($"[300300007] RemoveCollection ArgumentException: {ae}.");
+                _logger.LogError($"[500300007] RemoveCollection ArgumentException: {ae}.");
                 throw;
             }
             catch (Exception e)
             {
-                _logger.LogError($"[300300008] RemoveCollection Exception: {e}.");
+                _logger.LogError($"[500300008] RemoveCollection Exception: {e}.");
                 throw;
             }
         }

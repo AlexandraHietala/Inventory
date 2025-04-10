@@ -1,6 +1,8 @@
 using System.ComponentModel.DataAnnotations;
+using BrandApi.Models.DTOs.V1;
 using CollectionApi.Models.DTOs.V1;
 using ItemApi.Models.System;
+using SeriesApi.Models.DTOs.V1;
 
 namespace ItemApi.Models.DTOs.V1
 {

@@ -17,14 +17,14 @@ namespace UserApi.Controllers.V1
     {
         private readonly ILogger _logger;
         private readonly IConfiguration _configuration;
-        private readonly IControllerValidatorV1 _controllerValidator;
+        private readonly IUserControllerValidatorV1 _controllerValidator;
         private readonly IRemoveUserWorkflowV1 _removeUserWorkflow;
 
         public RemoveUserControllerV1(ILoggerFactory loggerFactory, IConfiguration configuration)
         {
             _logger = loggerFactory.CreateLogger<RemoveUserControllerV1>();
             _configuration = configuration;
-            _controllerValidator = new ControllerValidatorV1();
+            _controllerValidator = new UserControllerValidatorV1();
             _removeUserWorkflow = new RemoveUserWorkflowV1(loggerFactory, configuration);
         }
 
@@ -38,7 +38,7 @@ namespace UserApi.Controllers.V1
             try
             {
                 // Validate
-                var failures = _controllerValidator.ValidateId(id);
+                var failures = _controllerValidator.ValidateUserId(id);
                 if (!string.IsNullOrEmpty(failures)) throw new ArgumentException(failures);
 
                 // Process

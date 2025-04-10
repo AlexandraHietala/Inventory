@@ -61,18 +61,18 @@ namespace BrandApi.Controllers.V1
             }
             catch (ArgumentException ae)
             {
-                _logger.LogError($"[200100001] AddBrand ArgumentException: {ae}.");
+                _logger.LogError($"[300100001] AddBrand ArgumentException: {ae}.");
                 return BadRequest(ae.Message);
             }
             catch (InvalidOperationException ioe)
             {
-                _logger.LogError($"[200100002] AddBrand InvalidOperationException: {ioe}.");
-                return NotFound("[200100002] " + ioe.Message);
+                _logger.LogError($"[300100002] AddBrand InvalidOperationException: {ioe}.");
+                return NotFound("[300100002] " + ioe.Message);
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200100003] AddBrand Exception: {e}.");
-                return Problem("[200100003] " + e.Message);
+                _logger.LogError($"[300100003] AddBrand Exception: {e}.");
+                return Problem("[300100003] " + e.Message);
             }
         }
     }

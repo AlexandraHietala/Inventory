@@ -41,18 +41,18 @@ namespace BrandApi.Data.DataOperations.V1
             {
                 if (ioe.Message == "Sequence contains no elements")
                 {
-                    _logger.LogError($"[200500013] AddBrand Error while inserting brand: {ioe}");
+                    _logger.LogError($"[300500001] AddBrand Error while inserting brand: {ioe}");
                     throw;
                 }
                 else
                 {
-                    _logger.LogError($"[200500014] AddBrand InvalidOperationException: {ioe}.");
+                    _logger.LogError($"[300500002] AddBrand InvalidOperationException: {ioe}.");
                     throw;
                 }
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200500015] AddBrand Exception: {e}.");
+                _logger.LogError($"[300500003] AddBrand Exception: {e}.");
                 throw;
             }
         }

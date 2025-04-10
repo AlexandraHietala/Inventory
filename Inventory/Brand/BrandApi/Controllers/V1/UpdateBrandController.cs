@@ -2,11 +2,11 @@ using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using ItemApi.Models.Classes.V1;
-using ItemApi.Validators.V1;
-using ItemApi.Workflows.Workflows.V1;
+using BrandApi.Models.Classes.V1;
+using BrandApi.Validators.V1;
+using BrandApi.Workflows.Workflows.V1;
 
-namespace ItemApi.Controllers.V1
+namespace BrandApi.Controllers.V1
 {
     [ApiController]
     [ApiVersion("1.0")]
@@ -61,18 +61,18 @@ namespace ItemApi.Controllers.V1
             }
             catch (ArgumentException ae)
             {
-                _logger.LogError($"[200100049] UpdateBrand ArgumentException: {ae}.");
+                _logger.LogError($"[300100013] UpdateBrand ArgumentException: {ae}.");
                 return BadRequest(ae.Message);
             }
             catch (InvalidOperationException ioe)
             {
-                _logger.LogError($"[200100050] UpdateBrand InvalidOperationException: {ioe}.");
-                return NotFound("[200100050] " + ioe.Message);
+                _logger.LogError($"[300100014] UpdateBrand InvalidOperationException: {ioe}.");
+                return NotFound("[300100014] " + ioe.Message);
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200100051] UpdateBrand Exception: {e}.");
-                return Problem("[200100051] " + e.Message);
+                _logger.LogError($"[300100015] UpdateBrand Exception: {e}.");
+                return Problem("[300100015] " + e.Message);
             }
         }
     }

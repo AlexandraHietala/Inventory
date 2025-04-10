@@ -18,14 +18,14 @@ namespace SeriesApi.Controllers.V1
     {
         private readonly ILogger _logger;
         private readonly IConfiguration _configuration;
-        private readonly IGeneralControllerValidatorV1 _controllerValidator;
+        private readonly ISeriesControllerValidatorV1 _controllerValidator;
         private readonly IGetSeriesWorkflowV1 _getSeriesWorkflow;
 
         public GetSeriesControllerV1(ILoggerFactory loggerFactory, IConfiguration configuration)
         {
             _logger = loggerFactory.CreateLogger<GetSeriesControllerV1>();
             _configuration = configuration;
-            _controllerValidator = new GeneralControllerValidatorV1();
+            _controllerValidator = new SeriesControllerValidatorV1();
             _getSeriesWorkflow = new GetSeriesWorkflowV1(loggerFactory, configuration);
         }
 
@@ -39,7 +39,7 @@ namespace SeriesApi.Controllers.V1
             try
             {
                 // Validate
-                var failures = _controllerValidator.ValidateId(id);
+                var failures = _controllerValidator.ValidateSeriesId(id);
                 if (!string.IsNullOrEmpty(failures)) throw new ArgumentException(failures);
 
                 // Process
@@ -51,18 +51,18 @@ namespace SeriesApi.Controllers.V1
             }
             catch (ArgumentException ae)
             {
-                _logger.LogError($"[200100031] GetSeries ArgumentException: {ae}.");
+                _logger.LogError($"[400100004] GetSeries ArgumentException: {ae}.");
                 return BadRequest(ae.Message);
             }
             catch (InvalidOperationException ioe)
             {
-                _logger.LogError($"[200100032] GetSeries InvalidOperationException: {ioe}.");
-                return NotFound("[200100032] " + ioe.Message);
+                _logger.LogError($"[400100005] GetSeries InvalidOperationException: {ioe}.");
+                return NotFound("[400100005] " + ioe.Message);
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200100033] GetSeries Exception: {e}.");
-                return Problem("[200100033] " + e.Message);
+                _logger.LogError($"[400100006] GetSeries Exception: {e}.");
+                return Problem("[400100006] " + e.Message);
             }
         }
 

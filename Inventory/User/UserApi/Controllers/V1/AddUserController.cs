@@ -17,14 +17,14 @@ namespace UserApi.Controllers.V1
     {
         private readonly ILogger _logger;
         private readonly IConfiguration _configuration;
-        private readonly IControllerValidatorV1 _controllerValidator;
+        private readonly IUserControllerValidatorV1 _controllerValidator;
         private readonly IAddUserWorkflowV1 _addUserWorkflow;
 
         public AddUserControllerV1(ILoggerFactory loggerFactory, IConfiguration configuration)
         {
             _logger = loggerFactory.CreateLogger<AddUserControllerV1>();
             _configuration = configuration;
-            _controllerValidator = new ControllerValidatorV1();
+            _controllerValidator = new UserControllerValidatorV1();
             _addUserWorkflow = new AddUserWorkflowV1(loggerFactory, configuration);
         }
 

@@ -664,6 +664,16 @@
           "lib/netcoreapp2.1/_._": {}
         }
       },
+      "BrandApi.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/BrandApi.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BrandApi.Models.dll": {}
+        }
+      },
       "CollectionApi.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -678,13 +688,25 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
-          "CollectionApi.Models": "1.0.0"
+          "BrandApi.Models": "1.0.0",
+          "CollectionApi.Models": "1.0.0",
+          "SeriesApi.Models": "1.0.0"
         },
         "compile": {
           "bin/placeholder/ItemApi.Models.dll": {}
         },
         "runtime": {
           "bin/placeholder/ItemApi.Models.dll": {}
+        }
+      },
+      "SeriesApi.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/SeriesApi.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SeriesApi.Models.dll": {}
         }
       }
     }
@@ -1726,6 +1748,11 @@
         "version.txt"
       ]
     },
+    "BrandApi.Models/1.0.0": {
+      "type": "project",
+      "path": "../../Brand/BrandApi.Models/BrandApi.Models.csproj",
+      "msbuildProject": "../../Brand/BrandApi.Models/BrandApi.Models.csproj"
+    },
     "CollectionApi.Models/1.0.0": {
       "type": "project",
       "path": "../../Collection/CollectionApi.Models/CollectionApi.Models.csproj",
@@ -1735,6 +1762,11 @@
       "type": "project",
       "path": "../ItemApi.Models/ItemApi.Models.csproj",
       "msbuildProject": "../ItemApi.Models/ItemApi.Models.csproj"
+    },
+    "SeriesApi.Models/1.0.0": {
+      "type": "project",
+      "path": "../../Series/SeriesApi.Models/SeriesApi.Models.csproj",
+      "msbuildProject": "../../Series/SeriesApi.Models/SeriesApi.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1753,11 +1785,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alexa\\Source\\Repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Data\\ItemApi.Data.csproj",
+      "projectUniqueName": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Data\\ItemApi.Data.csproj",
       "projectName": "ItemApi.Data",
-      "projectPath": "C:\\Users\\alexa\\Source\\Repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Data\\ItemApi.Data.csproj",
+      "projectPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Data\\ItemApi.Data.csproj",
       "packagesPath": "C:\\Users\\alexa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alexa\\Source\\Repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Data\\obj\\",
+      "outputPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1779,8 +1811,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\alexa\\Source\\Repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Models\\ItemApi.Models.csproj": {
-              "projectPath": "C:\\Users\\alexa\\Source\\Repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Models\\ItemApi.Models.csproj"
+            "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Models\\ItemApi.Models.csproj": {
+              "projectPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Models\\ItemApi.Models.csproj"
             }
           }
         }
@@ -1794,7 +1826,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -1833,7 +1866,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

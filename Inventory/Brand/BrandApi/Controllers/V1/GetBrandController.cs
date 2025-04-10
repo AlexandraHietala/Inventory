@@ -3,11 +3,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System.Net;
 using Asp.Versioning;
-using ItemApi.Validators.V1;
-using ItemApi.Workflows.Workflows.V1;
-using ItemApi.Models.Classes.V1;
+using BrandApi.Validators.V1;
+using BrandApi.Workflows.Workflows.V1;
+using BrandApi.Models.Classes.V1;
 
-namespace ItemApi.Controllers.V1
+namespace BrandApi.Controllers.V1
 {
     [ApiController]
     [ApiVersion("1.0")]
@@ -18,14 +18,14 @@ namespace ItemApi.Controllers.V1
     {
         private readonly ILogger _logger;
         private readonly IConfiguration _configuration;
-        private readonly IGeneralControllerValidatorV1 _controllerValidator;
+        private readonly IBrandControllerValidatorV1 _controllerValidator;
         private readonly IGetBrandWorkflowV1 _getBrandWorkflow;
 
         public GetBrandControllerV1(ILoggerFactory loggerFactory, IConfiguration configuration)
         {
             _logger = loggerFactory.CreateLogger<GetBrandControllerV1>();
             _configuration = configuration;
-            _controllerValidator = new GeneralControllerValidatorV1();
+            _controllerValidator = new BrandControllerValidatorV1();
             _getBrandWorkflow = new GetBrandWorkflowV1(loggerFactory, configuration);
         }
 
@@ -39,7 +39,7 @@ namespace ItemApi.Controllers.V1
             try
             {
                 // Validate
-                var failures = _controllerValidator.ValidateId(id);
+                var failures = _controllerValidator.ValidateBrandId(id);
                 if (!string.IsNullOrEmpty(failures)) throw new ArgumentException(failures);
 
                 // Process
@@ -51,18 +51,18 @@ namespace ItemApi.Controllers.V1
             }
             catch (ArgumentException ae)
             {
-                _logger.LogError($"[200100013] GetBrand ArgumentException: {ae}.");
+                _logger.LogError($"[300100004] GetBrand ArgumentException: {ae}.");
                 return BadRequest(ae.Message);
             }
             catch (InvalidOperationException ioe)
             {
-                _logger.LogError($"[200100014] GetBrand InvalidOperationException: {ioe}.");
-                return NotFound("[200100014] " + ioe.Message);
+                _logger.LogError($"[300100005] GetBrand InvalidOperationException: {ioe}.");
+                return NotFound("[300100005] " + ioe.Message);
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200100015] GetBrand Exception: {e}.");
-                return Problem("[200100015] " + e.Message);
+                _logger.LogError($"[300100006] GetBrand Exception: {e}.");
+                return Problem("[300100006] " + e.Message);
             }
         }
 
@@ -87,18 +87,18 @@ namespace ItemApi.Controllers.V1
             }
             catch (ArgumentException ae)
             {
-                _logger.LogError($"[200100016] GetBrands ArgumentException: {ae}.");
+                _logger.LogError($"[300100007] GetBrands ArgumentException: {ae}.");
                 return BadRequest(ae.Message);
             }
             catch (InvalidOperationException ioe)
             {
-                _logger.LogError($"[200100017] GetBrands InvalidOperationException: {ioe}.");
-                return NotFound("[200100017] " + ioe.Message);
+                _logger.LogError($"[300100008] GetBrands InvalidOperationException: {ioe}.");
+                return NotFound("[300100008] " + ioe.Message);
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200100018] GetBrands Exception: {e}.");
-                return Problem("[200100018] " + e.Message);
+                _logger.LogError($"[300100009] GetBrands Exception: {e}.");
+                return Problem("[300100009] " + e.Message);
             }
         }
     }

@@ -18,14 +18,14 @@ namespace ItemApi.Controllers.V1
     {
         private readonly ILogger _logger;
         private readonly IConfiguration _configuration;
-        private readonly IGeneralControllerValidatorV1 _controllerValidator;
+        private readonly IItemCommentControllerValidatorV1 _controllerValidator;
         private readonly IGetItemCommentWorkflowV1 _getItemCommentWorkflow;
 
         public GetItemCommentControllerV1(ILoggerFactory loggerFactory, IConfiguration configuration)
         {
             _logger = loggerFactory.CreateLogger<GetItemCommentControllerV1>();
             _configuration = configuration;
-            _controllerValidator = new GeneralControllerValidatorV1();
+            _controllerValidator = new ItemCommentControllerValidatorV1();
             _getItemCommentWorkflow = new GetItemCommentWorkflowV1(loggerFactory, configuration);
         }
 
@@ -39,7 +39,7 @@ namespace ItemApi.Controllers.V1
             try
             {
                 // Validate
-                var failures = _controllerValidator.ValidateId(id);
+                var failures = _controllerValidator.ValidateItemCommentId(id);
                 if (!string.IsNullOrEmpty(failures)) throw new ArgumentException(failures);
 
                 // Process
@@ -51,18 +51,18 @@ namespace ItemApi.Controllers.V1
             }
             catch (ArgumentException ae)
             {
-                _logger.LogError($"[200100019] GetItemComment ArgumentException: {ae}.");
+                _logger.LogError($"[200100007] GetItemComment ArgumentException: {ae}.");
                 return BadRequest(ae.Message);
             }
             catch (InvalidOperationException ioe)
             {
-                _logger.LogError($"[200100020] GetItemComment InvalidOperationException: {ioe}.");
-                return NotFound("[200100020] " + ioe.Message);
+                _logger.LogError($"[200100008] GetItemComment InvalidOperationException: {ioe}.");
+                return NotFound("[200100008] " + ioe.Message);
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200100021] GetItemComment Exception: {e}.");
-                return Problem("[200100021] " + e.Message);
+                _logger.LogError($"[200100009] GetItemComment Exception: {e}.");
+                return Problem("[200100009] " + e.Message);
             }
         }
 
@@ -76,7 +76,7 @@ namespace ItemApi.Controllers.V1
             try
             {
                 // Validate
-                var failures = _controllerValidator.ValidateId(itemId);
+                var failures = _controllerValidator.ValidateItemCommentId(itemId);
                 if (!string.IsNullOrEmpty(failures)) throw new ArgumentException(failures);
 
                 // Process
@@ -88,18 +88,18 @@ namespace ItemApi.Controllers.V1
             }
             catch (ArgumentException ae)
             {
-                _logger.LogError($"[200100022] GetItemComments ArgumentException: {ae}.");
+                _logger.LogError($"[200100010] GetItemComments ArgumentException: {ae}.");
                 return BadRequest(ae.Message);
             }
             catch (InvalidOperationException ioe)
             {
-                _logger.LogError($"[200100023] GetItemComments InvalidOperationException: {ioe}.");
-                return NotFound("[200100023] " + ioe.Message);
+                _logger.LogError($"[200100011] GetItemComments InvalidOperationException: {ioe}.");
+                return NotFound("[200100011] " + ioe.Message);
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200100024] GetItemComments Exception: {e}.");
-                return Problem("[200100024] " + e.Message);
+                _logger.LogError($"[200100012] GetItemComments Exception: {e}.");
+                return Problem("[200100012] " + e.Message);
             }
         }
     }

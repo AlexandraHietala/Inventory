@@ -41,18 +41,18 @@ namespace ItemApi.Data.DataOperations.V1
             {
                 if (ioe.Message == "Sequence contains no elements")
                 {
-                    _logger.LogError($"[200500016] AddItemComment Error while inserting comment: {ioe}");
+                    _logger.LogError($"[200500001] AddItemComment Error while inserting comment: {ioe}");
                     throw;
                 }
                 else
                 {
-                    _logger.LogError($"[200500017] AddItemComment InvalidOperationException: {ioe}.");
+                    _logger.LogError($"[200500002] AddItemComment InvalidOperationException: {ioe}.");
                     throw;
                 }
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200500018] AddItemComment Exception: {e}.");
+                _logger.LogError($"[200500003] AddItemComment Exception: {e}.");
                 throw;
             }
         }

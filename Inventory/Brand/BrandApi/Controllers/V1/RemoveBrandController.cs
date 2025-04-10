@@ -2,11 +2,11 @@ using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using ItemApi.Models;
-using ItemApi.Validators.V1;
-using ItemApi.Workflows.Workflows.V1;
+using BrandApi.Models;
+using BrandApi.Validators.V1;
+using BrandApi.Workflows.Workflows.V1;
 
-namespace ItemApi.Controllers.V1
+namespace BrandApi.Controllers.V1
 {
     [ApiController]
     [ApiVersion("1.0")]
@@ -17,14 +17,14 @@ namespace ItemApi.Controllers.V1
     {
         private readonly ILogger _logger;
         private readonly IConfiguration _configuration;
-        private readonly IGeneralControllerValidatorV1 _controllerValidator;
+        private readonly IBrandControllerValidatorV1 _controllerValidator;
         private readonly IRemoveBrandWorkflowV1 _removeBrandWorkflow;
 
         public RemoveBrandControllerV1(ILoggerFactory loggerFactory, IConfiguration configuration)
         {
             _logger = loggerFactory.CreateLogger<RemoveBrandControllerV1>();
             _configuration = configuration;
-            _controllerValidator = new GeneralControllerValidatorV1();
+            _controllerValidator = new BrandControllerValidatorV1();
             _removeBrandWorkflow = new RemoveBrandWorkflowV1(loggerFactory, configuration);
         }
 
@@ -38,7 +38,7 @@ namespace ItemApi.Controllers.V1
             try
             {
                 // Validate
-                var failures = _controllerValidator.ValidateId(id);
+                var failures = _controllerValidator.ValidateBrandId(id);
                 if (!string.IsNullOrEmpty(failures)) throw new ArgumentException(failures);
 
                 // Process
@@ -50,18 +50,18 @@ namespace ItemApi.Controllers.V1
             }
             catch (ArgumentException ae)
             {
-                _logger.LogError($"[200100037] RemoveBrand ArgumentException: {ae}.");
+                _logger.LogError($"[300100010] RemoveBrand ArgumentException: {ae}.");
                 return BadRequest(ae.Message);
             }
             catch (InvalidOperationException ioe)
             {
-                _logger.LogError($"[200100038] RemoveBrand InvalidOperationException: {ioe}.");
-                return NotFound("[200100038] " + ioe.Message);
+                _logger.LogError($"[300100011] RemoveBrand InvalidOperationException: {ioe}.");
+                return NotFound("[300100011] " + ioe.Message);
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200100039] RemoveBrand Exception: {e}.");
-                return Problem("[200100039] " + e.Message);
+                _logger.LogError($"[300100012] RemoveBrand Exception: {e}.");
+                return Problem("[300100012] " + e.Message);
             }
         }
     }

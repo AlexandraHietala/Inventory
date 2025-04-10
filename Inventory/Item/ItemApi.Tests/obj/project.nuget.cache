@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "s2Xaq4Z6k84=",
+  "dgSpecHash": "ysg51m4vFRc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\alexa\\Source\\Repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Tests\\ItemApi.Tests.csproj",
+  "projectFilePath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Tests\\ItemApi.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alexa\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\alexa\\.nuget\\packages\\microsoft.codecoverage\\17.8.0\\microsoft.codecoverage.17.8.0.nupkg.sha512",

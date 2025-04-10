@@ -22,7 +22,7 @@ namespace SeriesApi.Data.DataOperations.V1
         {
             _logger = loggerFactory.CreateLogger<AddSeriesOperationsV1>();
             _configuration = configuration;
-            _connString = _configuration.GetConnectionString("StarryEdenItem")!;
+            _connString = _configuration.GetConnectionString("StarryEdenSeries")!;
         }
 
         public async Task<int> AddSeries(SeriesDto series)
@@ -41,18 +41,18 @@ namespace SeriesApi.Data.DataOperations.V1
             {
                 if (ioe.Message == "Sequence contains no elements")
                 {
-                    _logger.LogError($"[200500019] AddSeries Error while inserting series: {ioe}");
+                    _logger.LogError($"[400500001] AddSeries Error while inserting series: {ioe}");
                     throw;
                 }
                 else
                 {
-                    _logger.LogError($"[200500020] AddSeries InvalidOperationException: {ioe}.");
+                    _logger.LogError($"[400500002] AddSeries InvalidOperationException: {ioe}.");
                     throw;
                 }
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200500021] AddSeries Exception: {e}.");
+                _logger.LogError($"[400500003] AddSeries Exception: {e}.");
                 throw;
             }
         }

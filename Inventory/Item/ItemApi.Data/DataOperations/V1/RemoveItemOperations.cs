@@ -41,18 +41,18 @@ namespace ItemApi.Data.DataOperations.V1
             {
                 if (ioe.Message == "Sequence contains no elements")
                 {
-                    _logger.LogError($"[200500007] Error while removing item: {ioe}.");
+                    _logger.LogError($"[200500025] Error while removing item: {ioe}.");
                     throw;
                 }
                 else
                 {
-                    _logger.LogError($"[200500008] RemoveItem InvalidOperationException: {ioe}.");
+                    _logger.LogError($"[200500026] RemoveItem InvalidOperationException: {ioe}.");
                     throw;
                 }
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200500009] RemoveItem Exception: {e}.");
+                _logger.LogError($"[200500027] RemoveItem Exception: {e}.");
                 throw;
             }
         }

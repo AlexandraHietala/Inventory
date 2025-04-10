@@ -46,17 +46,17 @@ namespace ItemApi.Data.DataOperations.V1
                 {
                     // This item doesn't exist and we somehow missed it on validation
                     _logger.LogInformation($"GetItem InvalidOperationException: {ioe}. Rethrowing as ArgumentException.");
-                    throw new ArgumentException("[200500034] Item does not exist.");
+                    throw new ArgumentException("[200500013] Item does not exist.");
                 }
                 else
                 {
-                    _logger.LogError($"[200500035] GetItem InvalidOperationException: {ioe}.");
+                    _logger.LogError($"[200500014] GetItem InvalidOperationException: {ioe}.");
                     throw;
                 }
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200500036] GetItem Exception: {e}.");
+                _logger.LogError($"[200500015] GetItem Exception: {e}.");
                 throw;
             }
         }
@@ -77,17 +77,17 @@ namespace ItemApi.Data.DataOperations.V1
                 {
                     // This item doesn't exist and we somehow missed it on validation
                     _logger.LogInformation($"GetItems InvalidOperationException: {ioe}. Rethrowing as ArgumentException.");
-                    throw new ArgumentException("[200500004] Items do not exist.");
+                    throw new ArgumentException("[200500016] Items do not exist.");
                 }
                 else
                 {
-                    _logger.LogError($"[200500005] GetItems InvalidOperationException: {ioe}.");
+                    _logger.LogError($"[200500017] GetItems InvalidOperationException: {ioe}.");
                     throw;
                 }
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200500006] GetItems Exception: {e}.");
+                _logger.LogError($"[200500018] GetItems Exception: {e}.");
                 throw;
             }
         }
@@ -109,17 +109,17 @@ namespace ItemApi.Data.DataOperations.V1
                 {
                     // This item doesn't exist and we somehow missed it on validation
                     _logger.LogInformation($"GetItemsPerCollection InvalidOperationException: {ioe}. Rethrowing as ArgumentException.");
-                    throw new ArgumentException("[200500061] Items do not exist.");
+                    throw new ArgumentException("[200500019] Items do not exist.");
                 }
                 else
                 {
-                    _logger.LogError($"[200500062] GetItemsPerCollection InvalidOperationException: {ioe}.");
+                    _logger.LogError($"[200500020] GetItemsPerCollection InvalidOperationException: {ioe}.");
                     throw;
                 }
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200500063] GetItemsPerCollection Exception: {e}.");
+                _logger.LogError($"[200500021] GetItemsPerCollection Exception: {e}.");
                 throw;
             }
         }

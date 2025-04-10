@@ -41,18 +41,18 @@ namespace CollectionApi.Data.DataOperations.V1
             {
                 if (ioe.Message == "Sequence contains no elements")
                 {
-                    _logger.LogError($"[300500010] Error while removing collection: {ioe}.");
+                    _logger.LogError($"[500500010] Error while removing collection: {ioe}.");
                     throw;
                 }
                 else
                 {
-                    _logger.LogError($"[300500011] RemoveCollection InvalidOperationException: {ioe}.");
+                    _logger.LogError($"[500500011] RemoveCollection InvalidOperationException: {ioe}.");
                     throw;
                 }
             }
             catch (Exception e)
             {
-                _logger.LogError($"[300500012] RemoveCollection Exception: {e}.");
+                _logger.LogError($"[500500012] RemoveCollection Exception: {e}.");
                 throw;
             }
         }

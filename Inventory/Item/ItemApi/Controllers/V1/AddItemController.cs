@@ -71,18 +71,18 @@ namespace ItemApi.Controllers.V1
             }
             catch (ArgumentException ae)
             {
-                _logger.LogError($"[200100007] AddItem ArgumentException: {ae}.");
+                _logger.LogError($"[200100004] AddItem ArgumentException: {ae}.");
                 return BadRequest(ae.Message);
             }
             catch (InvalidOperationException ioe)
             {
-                _logger.LogError($"[200100008] AddItem InvalidOperationException: {ioe}.");
-                return NotFound("[200100008] " + ioe.Message);
+                _logger.LogError($"[200100005] AddItem InvalidOperationException: {ioe}.");
+                return NotFound("[200100005] " + ioe.Message);
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200100009] AddItem Exception: {e}.");
-                return Problem("[200100009] " + e.Message);
+                _logger.LogError($"[200100006] AddItem Exception: {e}.");
+                return Problem("[200100006] " + e.Message);
             }
         }
     }

@@ -5,6 +5,7 @@ using UserApi.Data.DataOperations.V1;
 using UserApi.Models.Classes.V1;
 using UserApi.Models.Converters.V1;
 using UserApi.Models.DTOs.V1;
+using UserApi.Data.Validators.V1;
 
 namespace UserApi.Workflows.Workflows.V1
 {
@@ -19,16 +20,18 @@ namespace UserApi.Workflows.Workflows.V1
         private readonly ILogger _logger;
         private readonly IConfiguration _configuration;
         private readonly IGetUserOperationsV1 _getUserOperations;
-        private readonly IVerifyOperationsV1 _verifyOperations;
-        private readonly IWorkflowValidatorV1 _workflowValidator;
+        private readonly IUserDataValidatorV1 _userDataValidator;
+        private readonly IRoleDataValidatorV1 _roleDataValidator;
+        private readonly IUserWorkflowValidatorV1 _workflowValidator;
 
         public GetUserWorkflowV1(ILoggerFactory loggerFactory, IConfiguration configuration)
         {
             _logger = loggerFactory.CreateLogger<GetUserWorkflowV1>();
             _configuration = configuration;
             _getUserOperations = new GetUserOperationsV1(loggerFactory, configuration);
-            _verifyOperations = new VerifyOperationsV1(loggerFactory, configuration);
-            _workflowValidator = new WorkflowValidatorV1(loggerFactory, configuration, _verifyOperations);
+            _userDataValidator = new UserDataValidatorV1(loggerFactory, configuration);
+            _roleDataValidator = new RoleDataValidatorV1(loggerFactory, configuration);
+            _workflowValidator = new UserWorkflowValidatorV1(loggerFactory, configuration, _userDataValidator, _roleDataValidator);
         }
 
         public async Task<User> GetUser(int id)

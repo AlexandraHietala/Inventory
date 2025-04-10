@@ -41,18 +41,18 @@ namespace BrandApi.Data.DataOperations.V1
             {
                 if (ioe.Message == "Sequence contains no elements")
                 {
-                    _logger.LogError($"[200500052] UpdateBrand Error while updating brand: {ioe}");
+                    _logger.LogError($"[300500013] UpdateBrand Error while updating brand: {ioe}");
                     throw;
                 }
                 else
                 {
-                    _logger.LogError($"[200500053] UpdateBrand InvalidOperationException: {ioe}.");
+                    _logger.LogError($"[300500014] UpdateBrand InvalidOperationException: {ioe}.");
                     throw;
                 }
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200500054] UpdateBrand Exception: {e}.");
+                _logger.LogError($"[300500015] UpdateBrand Exception: {e}.");
                 throw;
             }
         }

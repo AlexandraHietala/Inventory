@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using UserApi.Data.DataOperations.V1;
+using UserApi.Data.Validators.V1;
 using UserApi.Workflows.Validators.V1;
 
 namespace UserApi.Workflows.Workflows.V1
@@ -15,16 +16,18 @@ namespace UserApi.Workflows.Workflows.V1
         private readonly ILogger _logger;
         private readonly IConfiguration _configuration;
         private readonly IRemoveUserOperationsV1 _removeUserOperations;
-        private readonly IVerifyOperationsV1 _verifyOperations;
-        private readonly IWorkflowValidatorV1 _workflowValidator;
+        private readonly IUserDataValidatorV1 _userDataValidator;
+        private readonly IRoleDataValidatorV1 _roleDataValidator;
+        private readonly IUserWorkflowValidatorV1 _workflowValidator;
 
         public RemoveUserWorkflowV1(ILoggerFactory loggerFactory, IConfiguration configuration)
         {
             _logger = loggerFactory.CreateLogger<RemoveUserWorkflowV1>();
             _configuration = configuration;
             _removeUserOperations = new RemoveUserOperationsV1(loggerFactory, configuration);
-            _verifyOperations = new VerifyOperationsV1(loggerFactory, configuration);
-            _workflowValidator = new WorkflowValidatorV1(loggerFactory, configuration, _verifyOperations);
+            _userDataValidator = new UserDataValidatorV1(loggerFactory, configuration);
+            _roleDataValidator = new RoleDataValidatorV1(loggerFactory, configuration);
+            _workflowValidator = new UserWorkflowValidatorV1(loggerFactory, configuration, _userDataValidator, _roleDataValidator);
         }
 
         public async Task RemoveUser(int id, string lastmodifiedby)

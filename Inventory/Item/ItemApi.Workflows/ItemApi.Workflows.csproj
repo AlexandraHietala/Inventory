@@ -12,6 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Brand\BrandApi.Data\BrandApi.Data.csproj" />
+    <ProjectReference Include="..\..\Collection\CollectionApi.Data\CollectionApi.Data.csproj" />
+    <ProjectReference Include="..\..\Series\SeriesApi.Data\SeriesApi.Data.csproj" />
     <ProjectReference Include="..\ItemApi.Data\ItemApi.Data.csproj" />
     <ProjectReference Include="..\ItemApi.Models\ItemApi.Models.csproj" />
   </ItemGroup>

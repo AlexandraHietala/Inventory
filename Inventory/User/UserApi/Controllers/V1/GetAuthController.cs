@@ -17,14 +17,14 @@ namespace UserApi.Controllers.V1
     {
         private readonly ILogger _logger;
         private readonly IConfiguration _configuration;
-        private readonly IControllerValidatorV1 _controllerValidator;
+        private readonly IUserControllerValidatorV1 _controllerValidator;
         private readonly IGetAuthWorkflowV1 _getAuthWorkflow;
 
         public GetAuthControllerV1(ILoggerFactory loggerFactory, IConfiguration configuration)
         {
             _logger = loggerFactory.CreateLogger<GetAuthControllerV1>();
             _configuration = configuration;
-            _controllerValidator = new ControllerValidatorV1();
+            _controllerValidator = new UserControllerValidatorV1();
             _getAuthWorkflow = new GetAuthWorkflowV1(loggerFactory, configuration);
         }
 
@@ -38,7 +38,7 @@ namespace UserApi.Controllers.V1
             try
             {
                 // Validate
-                var failures = _controllerValidator.ValidateId(id);
+                var failures = _controllerValidator.ValidateUserId(id);
                 if (!string.IsNullOrEmpty(failures)) throw new ArgumentException(failures);
 
                 // Process

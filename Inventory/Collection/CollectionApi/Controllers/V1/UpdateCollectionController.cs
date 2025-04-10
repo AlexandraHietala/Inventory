@@ -61,18 +61,18 @@ namespace CollectionApi.Controllers.V1
             }
             catch (ArgumentException ae)
             {
-                _logger.LogError($"[300100012] UpdateCollection ArgumentException: {ae}.");
+                _logger.LogError($"[500100013] UpdateCollection ArgumentException: {ae}.");
                 return BadRequest(ae.Message);
             }
             catch (InvalidOperationException ioe)
             {
-                _logger.LogError($"[300100013] UpdateCollection InvalidOperationException: {ioe}.");
-                return NotFound("[300100013] " + ioe.Message);
+                _logger.LogError($"[500100014] UpdateCollection InvalidOperationException: {ioe}.");
+                return NotFound("[500100014] " + ioe.Message);
             }
             catch (Exception e)
             {
-                _logger.LogError($"[300100014] UpdateCollection Exception: {e}.");
-                return Problem("[300100014] " + e.Message);
+                _logger.LogError($"[500100015] UpdateCollection Exception: {e}.");
+                return Problem("[500100015] " + e.Message);
             }
         }
     }

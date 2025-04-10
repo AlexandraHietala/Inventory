@@ -5,6 +5,7 @@ using ItemApi.Data.DataOperations.V1;
 using ItemApi.Models.Classes.V1;
 using ItemApi.Models.Converters.V1;
 using ItemApi.Models.DTOs.V1;
+using ItemApi.Data.Validators.V1;
 
 namespace ItemApi.Workflows.Workflows.V1
 {
@@ -19,7 +20,8 @@ namespace ItemApi.Workflows.Workflows.V1
         private readonly ILogger _logger;
         private readonly IConfiguration _configuration;
         private readonly IGetItemCommentOperationsV1 _getItemCommentOperations;
-        private readonly IVerifyOperationsV1 _verifyOperations;
+        private readonly IItemDataValidatorV1 _itemDataValidator;
+        private readonly IItemCommentDataValidatorV1 _itemCommentDataValidator;
         private readonly IItemCommentWorkflowValidatorV1 _workflowValidator;
 
         public GetItemCommentWorkflowV1(ILoggerFactory loggerFactory, IConfiguration configuration)
@@ -27,8 +29,9 @@ namespace ItemApi.Workflows.Workflows.V1
             _logger = loggerFactory.CreateLogger<GetItemCommentWorkflowV1>();
             _configuration = configuration;
             _getItemCommentOperations = new GetItemCommentOperationsV1(loggerFactory, configuration);
-            _verifyOperations = new VerifyOperationsV1(loggerFactory, configuration);
-            _workflowValidator = new ItemCommentWorkflowValidatorV1(loggerFactory, configuration, _verifyOperations);
+            _itemDataValidator = new ItemDataValidatorV1(loggerFactory, configuration);
+            _itemCommentDataValidator = new ItemCommentDataValidatorV1(loggerFactory, configuration);
+            _workflowValidator = new ItemCommentWorkflowValidatorV1(loggerFactory, configuration, _itemDataValidator, _itemCommentDataValidator);
         }
 
         public async Task<ItemComment> GetItemComment(int id)
@@ -51,12 +54,12 @@ namespace ItemApi.Workflows.Workflows.V1
             }
             catch (ArgumentException ae)
             {
-                _logger.LogError($"[200300013] GetItemComment ArgumentException: {ae}.");
+                _logger.LogError($"[200300005] GetItemComment ArgumentException: {ae}.");
                 throw;
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200300014] GetItemComment Exception: {e}.");
+                _logger.LogError($"[200300006] GetItemComment Exception: {e}.");
                 throw;
             }
         }
@@ -81,12 +84,12 @@ namespace ItemApi.Workflows.Workflows.V1
             }
             catch (ArgumentException ae)
             {
-                _logger.LogError($"[200300015] GetItemComments ArgumentException: {ae}.");
+                _logger.LogError($"[200300007] GetItemComments ArgumentException: {ae}.");
                 throw;
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200300016] GetItemComments Exception: {e}.");
+                _logger.LogError($"[200300008] GetItemComments Exception: {e}.");
                 throw;
             }
         }

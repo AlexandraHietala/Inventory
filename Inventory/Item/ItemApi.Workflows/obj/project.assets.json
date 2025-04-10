@@ -664,6 +664,50 @@
           "lib/netcoreapp2.1/_._": {}
         }
       },
+      "BrandApi.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "BrandApi.Models": "1.0.0",
+          "Dapper": "2.1.66",
+          "Microsoft.Data.SqlClient": "6.0.1",
+          "Microsoft.Extensions.Configuration.Abstractions": "9.0.3",
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BrandApi.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BrandApi.Data.dll": {}
+        }
+      },
+      "BrandApi.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/BrandApi.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BrandApi.Models.dll": {}
+        }
+      },
+      "CollectionApi.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "CollectionApi.Models": "1.0.0",
+          "Dapper": "2.1.66",
+          "Microsoft.Data.SqlClient": "6.0.1",
+          "Microsoft.Extensions.Configuration.Abstractions": "9.0.3",
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CollectionApi.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CollectionApi.Data.dll": {}
+        }
+      },
       "CollectionApi.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -695,13 +739,42 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
-          "CollectionApi.Models": "1.0.0"
+          "BrandApi.Models": "1.0.0",
+          "CollectionApi.Models": "1.0.0",
+          "SeriesApi.Models": "1.0.0"
         },
         "compile": {
           "bin/placeholder/ItemApi.Models.dll": {}
         },
         "runtime": {
           "bin/placeholder/ItemApi.Models.dll": {}
+        }
+      },
+      "SeriesApi.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Dapper": "2.1.66",
+          "Microsoft.Data.SqlClient": "6.0.1",
+          "Microsoft.Extensions.Configuration.Abstractions": "9.0.3",
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.0",
+          "SeriesApi.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SeriesApi.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SeriesApi.Data.dll": {}
+        }
+      },
+      "SeriesApi.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/SeriesApi.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SeriesApi.Models.dll": {}
         }
       }
     }
@@ -1743,6 +1816,21 @@
         "version.txt"
       ]
     },
+    "BrandApi.Data/1.0.0": {
+      "type": "project",
+      "path": "../../Brand/BrandApi.Data/BrandApi.Data.csproj",
+      "msbuildProject": "../../Brand/BrandApi.Data/BrandApi.Data.csproj"
+    },
+    "BrandApi.Models/1.0.0": {
+      "type": "project",
+      "path": "../../Brand/BrandApi.Models/BrandApi.Models.csproj",
+      "msbuildProject": "../../Brand/BrandApi.Models/BrandApi.Models.csproj"
+    },
+    "CollectionApi.Data/1.0.0": {
+      "type": "project",
+      "path": "../../Collection/CollectionApi.Data/CollectionApi.Data.csproj",
+      "msbuildProject": "../../Collection/CollectionApi.Data/CollectionApi.Data.csproj"
+    },
     "CollectionApi.Models/1.0.0": {
       "type": "project",
       "path": "../../Collection/CollectionApi.Models/CollectionApi.Models.csproj",
@@ -1757,13 +1845,26 @@
       "type": "project",
       "path": "../ItemApi.Models/ItemApi.Models.csproj",
       "msbuildProject": "../ItemApi.Models/ItemApi.Models.csproj"
+    },
+    "SeriesApi.Data/1.0.0": {
+      "type": "project",
+      "path": "../../Series/SeriesApi.Data/SeriesApi.Data.csproj",
+      "msbuildProject": "../../Series/SeriesApi.Data/SeriesApi.Data.csproj"
+    },
+    "SeriesApi.Models/1.0.0": {
+      "type": "project",
+      "path": "../../Series/SeriesApi.Models/SeriesApi.Models.csproj",
+      "msbuildProject": "../../Series/SeriesApi.Models/SeriesApi.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "BrandApi.Data >= 1.0.0",
+      "CollectionApi.Data >= 1.0.0",
       "ItemApi.Data >= 1.0.0",
       "ItemApi.Models >= 1.0.0",
-      "Microsoft.Extensions.Logging.Abstractions >= 9.0.0"
+      "Microsoft.Extensions.Logging.Abstractions >= 9.0.0",
+      "SeriesApi.Data >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1773,11 +1874,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alexa\\Source\\Repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Workflows\\ItemApi.Workflows.csproj",
+      "projectUniqueName": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Workflows\\ItemApi.Workflows.csproj",
       "projectName": "ItemApi.Workflows",
-      "projectPath": "C:\\Users\\alexa\\Source\\Repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Workflows\\ItemApi.Workflows.csproj",
+      "projectPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Workflows\\ItemApi.Workflows.csproj",
       "packagesPath": "C:\\Users\\alexa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alexa\\Source\\Repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Workflows\\obj\\",
+      "outputPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Workflows\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1799,11 +1900,20 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\alexa\\Source\\Repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Data\\ItemApi.Data.csproj": {
-              "projectPath": "C:\\Users\\alexa\\Source\\Repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Data\\ItemApi.Data.csproj"
+            "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Brand\\BrandApi.Data\\BrandApi.Data.csproj": {
+              "projectPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Brand\\BrandApi.Data\\BrandApi.Data.csproj"
             },
-            "C:\\Users\\alexa\\Source\\Repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Models\\ItemApi.Models.csproj": {
-              "projectPath": "C:\\Users\\alexa\\Source\\Repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Models\\ItemApi.Models.csproj"
+            "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Data\\CollectionApi.Data.csproj": {
+              "projectPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Collection\\CollectionApi.Data\\CollectionApi.Data.csproj"
+            },
+            "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Data\\ItemApi.Data.csproj": {
+              "projectPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Data\\ItemApi.Data.csproj"
+            },
+            "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Models\\ItemApi.Models.csproj": {
+              "projectPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Item\\ItemApi.Models\\ItemApi.Models.csproj"
+            },
+            "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Series\\SeriesApi.Data\\SeriesApi.Data.csproj": {
+              "projectPath": "C:\\Users\\alexa\\source\\repos\\AlexandraHietala\\Inventory\\Inventory\\Series\\SeriesApi.Data\\SeriesApi.Data.csproj"
             }
           }
         }
@@ -1817,7 +1927,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -1844,7 +1955,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

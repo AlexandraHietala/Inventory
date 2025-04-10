@@ -61,18 +61,18 @@ namespace SeriesApi.Controllers.V1
             }
             catch (ArgumentException ae)
             {
-                _logger.LogError($"[200100010] AddSeries ArgumentException: {ae}.");
+                _logger.LogError($"[400100001] AddSeries ArgumentException: {ae}.");
                 return BadRequest(ae.Message);
             }
             catch (InvalidOperationException ioe)
             {
-                _logger.LogError($"[200100011] AddSeries InvalidOperationException: {ioe}.");
-                return NotFound("[200100011] " + ioe.Message);
+                _logger.LogError($"[400100002] AddSeries InvalidOperationException: {ioe}.");
+                return NotFound("[400100002] " + ioe.Message);
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200100012] AddSeries Exception: {e}.");
-                return Problem("[200100012] " + e.Message);
+                _logger.LogError($"[400100003] AddSeries Exception: {e}.");
+                return Problem("[400100003] " + e.Message);
             }
         }
     }

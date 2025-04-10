@@ -61,18 +61,18 @@ namespace SeriesApi.Controllers.V1
             }
             catch (ArgumentException ae)
             {
-                _logger.LogError($"[200100058] UpdateSeries ArgumentException: {ae}.");
+                _logger.LogError($"[400100010] UpdateSeries ArgumentException: {ae}.");
                 return BadRequest(ae.Message);
             }
             catch (InvalidOperationException ioe)
             {
-                _logger.LogError($"[200100059] UpdateSeries InvalidOperationException: {ioe}.");
-                return NotFound("[200100059] " + ioe.Message);
+                _logger.LogError($"[400100011] UpdateSeries InvalidOperationException: {ioe}.");
+                return NotFound("[400100011] " + ioe.Message);
             }
             catch (Exception e)
             {
-                _logger.LogError($"[200100060] UpdateSeries Exception: {e}.");
-                return Problem("[200100060] " + e.Message);
+                _logger.LogError($"[400100012] UpdateSeries Exception: {e}.");
+                return Problem("[400100012] " + e.Message);
             }
         }
     }
