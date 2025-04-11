@@ -38,7 +38,7 @@ namespace ItemApi.Controllers.V1
             try
             {
                 // Validate
-                ItemComment item = new ItemComment()
+                ItemComment itemComment = new ItemComment()
                 {
                     Id = 0,
                     ItemId = itemId,
@@ -49,11 +49,11 @@ namespace ItemApi.Controllers.V1
                     LastModifiedDate = DateTime.Now
                 };
 
-                var failures = _controllerValidator.ValidateAddItemComment(item);
+                var failures = _controllerValidator.ValidateAddItemComment(itemComment);
                 if (!string.IsNullOrEmpty(failures)) throw new ArgumentException(failures);
 
                 // Process
-                int id = await _addItemCommentWorkflow.AddItemComment(item);
+                int id = await _addItemCommentWorkflow.AddItemComment(itemComment);
 
                 // Respond
                 _logger.LogInformation("AddItemComment success response.");

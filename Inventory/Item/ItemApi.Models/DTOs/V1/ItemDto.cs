@@ -9,17 +9,14 @@ namespace ItemApi.Models.DTOs.V1
         public required int ID { get; set; }
 
         [Required]
-        public required int COLLECTION_ID { get; set; }
-
-        [Required]
         public required string STATUS { get; set; } 
 
         [Required]
         public required string TYPE { get; set; }
 
-        public int? BRAND_ID { get; set; }
+        public string? BRAND { get; set; }
 
-        public int? SERIES_ID { get; set; }
+        public string? SERIES { get; set; }
 
         public string? NAME { get; set; }
 

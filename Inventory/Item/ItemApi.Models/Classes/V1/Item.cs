@@ -9,17 +9,14 @@ namespace ItemApi.Models.Classes.V1
         public required int Id { get; set; }
 
         [Required]
-        public required int CollectionId { get; set; }
-
-        [Required]
         public required string Status { get; set; }
 
         [Required]
         public required string Type { get; set; }
 
-        public int? BrandId { get; set; }
+        public string? Brand { get; set; }
 
-        public int? SeriesId { get; set; }
+        public string? Series { get; set; }
 
         public string? Name { get; set; }
 

@@ -3,8 +3,6 @@ GO
 
 EXEC [app].[spGetItems] NULL
 EXEC [app].[spGetItems] 'min'
-EXEC [app].[spGetItemsPerCollection] 1, 'pri'
-EXEC [app].[spGetItemsPerCollection] 1, NULL
 EXEC [app].[spSearchItems] 0, 5, 'STATUS', 'ASC', NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 EXEC [app].[spGetItem] 2
 EXEC [app].[spAddItem] 'OWNED', 'BLIND', 1, 'My Item', NULL, 'KEYCHAIN', 'LARGE', 2023, NULL, 'AHIETALA'

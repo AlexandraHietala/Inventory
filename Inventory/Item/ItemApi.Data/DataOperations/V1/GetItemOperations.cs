@@ -12,7 +12,6 @@ namespace ItemApi.Data.DataOperations.V1
     {
         Task<ItemDto> GetItem(int id);
         Task<List<ItemDto>> GetItems(string? search);
-        Task<List<ItemDto>> GetItemsPerCollection(int collectionId);
     }
 
     public class GetItemOperationsV1 : IGetItemOperationsV1
@@ -90,38 +89,6 @@ namespace ItemApi.Data.DataOperations.V1
                 _logger.LogError($"[200500018] GetItems Exception: {e}.");
                 throw;
             }
-        }
-
-        public async Task<List<ItemDto>> GetItemsPerCollection(int collectionId)
-        {
-            try
-            {
-                _logger.LogDebug("GetItemsPerCollection request received.");
-
-                using IDbConnection connection = new SqlConnection(_connString);
-                IEnumerable<ItemDto> items = await connection.QueryAsync<ItemDto>("[app].[spGetItemsPerCollection]", new { collection_id = collectionId }, commandType: CommandType.StoredProcedure);
-                _logger.LogInformation("GetItemsPerCollection success response.");
-                return items.ToList();
-            }
-            catch (InvalidOperationException ioe)
-            {
-                if (ioe.Message == "Sequence contains no elements")
-                {
-                    // This item doesn't exist and we somehow missed it on validation
-                    _logger.LogInformation($"GetItemsPerCollection InvalidOperationException: {ioe}. Rethrowing as ArgumentException.");
-                    throw new ArgumentException("[200500019] Items do not exist.");
-                }
-                else
-                {
-                    _logger.LogError($"[200500020] GetItemsPerCollection InvalidOperationException: {ioe}.");
-                    throw;
-                }
-            }
-            catch (Exception e)
-            {
-                _logger.LogError($"[200500021] GetItemsPerCollection Exception: {e}.");
-                throw;
-            }
-        }
+        } 
     }
 }

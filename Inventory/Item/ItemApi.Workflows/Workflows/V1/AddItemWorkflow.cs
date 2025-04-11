@@ -6,9 +6,6 @@ using ItemApi.Models.Converters.V1;
 using ItemApi.Models.DTOs.V1;
 using ItemApi.Workflows.Validators.V1;
 using ItemApi.Data.Validators.V1;
-using SeriesApi.Data.Validators.V1;
-using BrandApi.Data.Validators.V1;
-using CollectionApi.Data.Validators.V1;
 
 namespace ItemApi.Workflows.Workflows.V1
 {
@@ -23,9 +20,6 @@ namespace ItemApi.Workflows.Workflows.V1
         private readonly IConfiguration _configuration;
         private readonly IAddItemOperationsV1 _addItemOperations;
         private readonly IItemDataValidatorV1 _itemDataValidator;
-        private readonly ISeriesDataValidatorV1 _seriesDataValidator;
-        private readonly IBrandDataValidatorV1 _brandDataValidator;
-        private readonly ICollectionDataValidatorV1 _collectionDataValidator;
         private readonly IItemWorkflowValidatorV1 _workflowValidator;
 
 
@@ -35,10 +29,7 @@ namespace ItemApi.Workflows.Workflows.V1
             _configuration = configuration;
             _addItemOperations = new AddItemOperationsV1(loggerFactory, configuration);
             _itemDataValidator = new ItemDataValidatorV1(loggerFactory, configuration);
-            _seriesDataValidator = new SeriesDataValidatorV1(loggerFactory, configuration);
-            _brandDataValidator = new BrandDataValidatorV1(loggerFactory, configuration);
-            _collectionDataValidator = new CollectionDataValidatorV1(loggerFactory, configuration);
-            _workflowValidator = new ItemWorkflowValidatorV1(loggerFactory, configuration, _itemDataValidator, _seriesDataValidator, _brandDataValidator, _collectionDataValidator);
+            _workflowValidator = new ItemWorkflowValidatorV1(loggerFactory, configuration, _itemDataValidator);
         }
         
         public async Task<int> AddItem(Item item)

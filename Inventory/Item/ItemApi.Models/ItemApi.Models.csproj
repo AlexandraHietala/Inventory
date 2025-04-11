@@ -7,10 +7,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\Brand\BrandApi.Models\BrandApi.Models.csproj" />
-    <ProjectReference Include="..\..\Collection\CollectionApi.Models\CollectionApi.Models.csproj" />
-    <ProjectReference Include="..\..\Series\SeriesApi.Models\SeriesApi.Models.csproj" />
-  </ItemGroup>
-
 </Project>

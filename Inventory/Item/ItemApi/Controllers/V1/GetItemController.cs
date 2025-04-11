@@ -101,45 +101,5 @@ namespace ItemApi.Controllers.V1
                 return Problem("[200100018] " + e.Message);
             }
         }
-
-        [MapToApiVersion("1.0")]
-        [HttpGet]
-        [Route("getitemspercollection")]
-        public async Task<IActionResult> GetItemsPerCollectionV1(int collectionId)
-        {
-            _logger.LogDebug("GetItemsPerCollectionV1 request received.");
-
-            try
-            {
-                // Validate
-                var failures = _controllerValidator.ValidateCollectionId(collectionId);
-                if (!string.IsNullOrEmpty(failures)) throw new ArgumentException(failures);
-
-                // Process
-                List<Item> requestedItems = await _getItemWorkflow.GetItemsPerCollection(collectionId);
-
-                // Respond
-                _logger.LogInformation("GetItemsPerCollectionV1 success response.");
-                return Ok(requestedItems);
-            }
-            catch (ArgumentException ae)
-            {
-                _logger.LogError($"[200100019] GetItemsPerCollectionV1 ArgumentException: {ae}.");
-                return BadRequest(ae.Message);
-            }
-            catch (InvalidOperationException ioe)
-            {
-                _logger.LogError($"[200100020] GetItemsPerCollectionV1 InvalidOperationException: {ioe}.");
-                return NotFound("[200100020] " + ioe.Message);
-            }
-            catch (Exception e)
-            {
-                _logger.LogError($"[200100021] GetItemsPerCollectionV1 Exception: {e}.");
-                return Problem("[200100021] " + e.Message);
-            }
-        }
-
-
-        
     }
 }
