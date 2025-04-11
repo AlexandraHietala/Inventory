@@ -53,14 +53,6 @@
         ],
         "parameters": [
           {
-            "name": "collectionId",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
             "name": "status",
             "in": "query",
             "schema": {
@@ -75,19 +67,17 @@
             }
           },
           {
-            "name": "brandId",
+            "name": "brand",
             "in": "query",
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           },
           {
-            "name": "seriesId",
+            "name": "series",
             "in": "query",
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           },
           {
@@ -226,28 +216,6 @@
         }
       }
     },
-    "/api/v1/item/getitemspercollection": {
-      "get": {
-        "tags": [
-          "GetItemControllerV1"
-        ],
-        "parameters": [
-          {
-            "name": "collectionId",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
     "/api/v1/comment/removeitemcomment": {
       "delete": {
         "tags": [
@@ -365,14 +333,6 @@
             }
           },
           {
-            "name": "collectionId",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
             "name": "status",
             "in": "query",
             "schema": {
@@ -387,19 +347,17 @@
             }
           },
           {
-            "name": "brandId",
+            "name": "brand",
             "in": "query",
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           },
           {
-            "name": "seriesId",
+            "name": "series",
             "in": "query",
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           },
           {

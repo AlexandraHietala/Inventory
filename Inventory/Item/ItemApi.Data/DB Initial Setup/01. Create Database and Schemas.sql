@@ -49,68 +49,68 @@ IF EXISTS (SELECT * FROM sys.schemas WHERE name = N'hist')
 DROP SCHEMA [hist]
 GO
 
-ALTER DATABASE [StarryEdenItem] SET single_user WITH rollback immediate
+ALTER DATABASE [SEInventory] SET single_user WITH rollback immediate
 GO
 
-DROP DATABASE IF EXISTS [StarryEdenItem]
+DROP DATABASE IF EXISTS [SEInventory]
 GO
 */
 
 -----------------------------------------------------------
 
-CREATE DATABASE [StarryEdenItem]
+CREATE DATABASE [SEInventory]
 GO
 
-ALTER DATABASE [StarryEdenItem] SET MULTI_USER
+ALTER DATABASE [SEInventory] SET MULTI_USER
 GO
 
 -----------------------------------------------------------
 
-USE [StarryEdenItem]
+USE [SEInventory]
 GO
 
-IF NOT EXISTS (SELECT * FROM sys.syslogins WHERE name = N'StarryEdenAppAdmin')
-	CREATE LOGIN [StarryEdenAppAdmin] WITH PASSWORD=N'Tomorrow@9', DEFAULT_DATABASE=[StarryEdenItem], DEFAULT_LANGUAGE=[us_english], CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF
+IF NOT EXISTS (SELECT * FROM sys.syslogins WHERE name = N'SEAppAdmin')
+	CREATE LOGIN [SEAppAdmin] WITH PASSWORD=N'Tomorrow@9', DEFAULT_DATABASE=[SEInventory], DEFAULT_LANGUAGE=[us_english], CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF
 GO
 
-ALTER LOGIN [StarryEdenAppAdmin] ENABLE
+ALTER LOGIN [SEAppAdmin] ENABLE
 GO 
 
-IF NOT EXISTS (SELECT * FROM sys.sysusers WHERE name = N'StarryEdenAppAdmin')
-	CREATE USER [StarryEdenAppAdmin] FOR LOGIN [StarryEdenAppAdmin];
+IF NOT EXISTS (SELECT * FROM sys.sysusers WHERE name = N'SEAppAdmin')
+	CREATE USER [SEAppAdmin] FOR LOGIN [SEAppAdmin];
 GO
 
 -----------------------------------------------------------
 
-USE [StarryEdenItem]
+USE [SEInventory]
 GO
 
-CREATE SCHEMA hist AUTHORIZATION [StarryEdenAppAdmin]
-GO
-
------------------------------------------------------------
-
-USE [StarryEdenItem]
-GO
-
-CREATE SCHEMA app AUTHORIZATION [StarryEdenAppAdmin]
+CREATE SCHEMA hist AUTHORIZATION [SEAppAdmin]
 GO
 
 -----------------------------------------------------------
 
-USE [StarryEdenItem]
+USE [SEInventory]
 GO
 
-ALTER USER [StarryEdenAppAdmin]
+CREATE SCHEMA app AUTHORIZATION [SEAppAdmin]
+GO
+
+-----------------------------------------------------------
+
+USE [SEInventory]
+GO
+
+ALTER USER [SEAppAdmin]
 WITH DEFAULT_SCHEMA = app;
 
 GO
 
 -----------------------------------------------------------
 
-USE [StarryEdenItem]
+USE [SEInventory]
 
-ALTER ROLE [db_owner] ADD MEMBER [StarryEdenAppAdmin];
+ALTER ROLE [db_owner] ADD MEMBER [SEAppAdmin];
 GO
 
 -----------------------------------------------------------

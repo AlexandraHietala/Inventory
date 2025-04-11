@@ -5,7 +5,7 @@
 
 -----------------------------------------------------------
 
-USE [StarryEdenItem]
+USE [SEInventory]
 GO
 
 SET ANSI_NULLS ON
@@ -394,7 +394,7 @@ CREATE OR ALTER PROCEDURE [app].[spSearchItems]
 	@endingindex int,
 	@orderby varchar(50),
 	@order varchar(4),
-	@id int,,
+	@id int,
 	@status varchar(10),
 	@type varchar(15),
 	@brand varchar(100),

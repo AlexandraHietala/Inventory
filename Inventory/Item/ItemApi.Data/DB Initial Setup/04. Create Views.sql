@@ -5,25 +5,7 @@
 
 -----------------------------------------------------------
 
-USE [StarryEdenItem]
-GO
-
------------------------------------------------------------
-
-CREATE OR ALTER VIEW [app].[vwBrands] AS
-	
-SELECT *
-FROM [StarryEdenBrand].[app].[Brands]
-
-GO
-
------------------------------------------------------------
-
-CREATE OR ALTER VIEW [app].[vwSeries] AS
-	
-SELECT *
-FROM [StarryEdenSeries].[app].[Series]
-
+USE [SEInventory]
 GO
 
 -----------------------------------------------------------

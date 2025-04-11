@@ -22,7 +22,7 @@ namespace ItemApi.Data.Validators.V1
         {
             _logger = loggerFactory.CreateLogger<ItemCommentDataValidatorV1>();
             _configuration = configuration;
-            _connString = _configuration.GetConnectionString("StarryEdenItem")!;
+            _connString = _configuration.GetConnectionString("SEInventory")!;
         }
 
         public async Task<bool> VerifyItemComment(int id)

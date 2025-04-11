@@ -22,7 +22,7 @@ namespace ItemApi.Data.DataOperations.V1
         {
             _logger = loggerFactory.CreateLogger<AddItemOperationsV1>();
             _configuration = configuration;
-            _connString = _configuration.GetConnectionString("StarryEdenItem")!;
+            _connString = _configuration.GetConnectionString("SEInventory")!;
         }
 
         public async Task<int> AddItem(ItemDto item)
@@ -32,7 +32,7 @@ namespace ItemApi.Data.DataOperations.V1
                 _logger.LogDebug("AddItem request received.");
 
                 using IDbConnection connection = new SqlConnection(_connString);
-                int id = await connection.QueryFirstAsync<int>("[app].[spAddItem]", new { status = item.STATUS, type = item.TYPE, brand_id = item.BRAND, series_id = item.SERIES, name = item.NAME, description = item.DESCRIPTION, format = item.FORMAT, size = item.SIZE, year = item.YEAR, photo = item.PHOTO, lastmodifiedby = item.LAST_MODIFIED_BY }, commandType: CommandType.StoredProcedure);
+                int id = await connection.QueryFirstAsync<int>("[app].[spAddItem]", new { status = item.STATUS, type = item.TYPE, brand = item.BRAND, series  = item.SERIES, name = item.NAME, description = item.DESCRIPTION, format = item.FORMAT, size = item.SIZE, year = item.YEAR, photo = item.PHOTO, lastmodifiedby = item.LAST_MODIFIED_BY }, commandType: CommandType.StoredProcedure);
 
                 _logger.LogInformation("AddItem success response.");
                 return id;

@@ -5,7 +5,7 @@
 
 -----------------------------------------------------------
 
-USE [StarryEdenItem]
+USE [SEInventory]
 GO
 
 SET ANSI_NULLS ON

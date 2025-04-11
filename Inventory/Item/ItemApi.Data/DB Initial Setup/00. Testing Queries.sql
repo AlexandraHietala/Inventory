@@ -1,4 +1,4 @@
-USE [StarryEdenItem]
+USE [SEInventory]
 GO
 
 EXEC [app].[spGetItems] NULL

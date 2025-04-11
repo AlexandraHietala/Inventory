@@ -24,7 +24,7 @@ namespace ItemApi.Data.DataOperations.V1
         {
             _logger = loggerFactory.CreateLogger<GetItemOperationsV1>();
             _configuration = configuration;
-            _connString = _configuration.GetConnectionString("StarryEdenItem")!;
+            _connString = _configuration.GetConnectionString("SEInventory")!;
         }
 
         public async Task<ItemDto> GetItem(int id)

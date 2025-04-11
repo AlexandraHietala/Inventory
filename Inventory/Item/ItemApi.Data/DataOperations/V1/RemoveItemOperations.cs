@@ -22,7 +22,7 @@ namespace ItemApi.Data.DataOperations.V1
         {
             _logger = loggerFactory.CreateLogger<RemoveItemOperationsV1>();
             _configuration = configuration;
-            _connString = _configuration.GetConnectionString("StarryEdenItem")!;
+            _connString = _configuration.GetConnectionString("SEInventory")!;
         }
 
         public async Task RemoveItem(int id, string lastmodifiedby)
